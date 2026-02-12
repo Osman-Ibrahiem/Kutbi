@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/routing/app_routes.dart';
+import 'core/theme/app_theme.dart';
 import 'generated/l10n.dart';
 
 class KutbiApp extends StatelessWidget {
@@ -22,6 +23,9 @@ class KutbiApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       locale: const Locale('ar'),
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
+      themeMode: ThemeMode.system,
     );
   }
 }
