@@ -11,7 +11,7 @@ class KutbiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Kutbi',
+      onGenerateTitle: (context) => S.of(context).appTitle,
       initialRoute: AppRoutes.initial,
       routes: AppRoutes.routes,
       localizationsDelegates: [
