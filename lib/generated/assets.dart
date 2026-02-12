@@ -6,5 +6,8 @@ class Assets {
   static const String fontsCairoMedium = 'assets/fonts/Cairo-Medium.ttf';
   static const String fontsCairoRegular = 'assets/fonts/Cairo-Regular.ttf';
   static const String fontsCairoSemiBold = 'assets/fonts/Cairo-SemiBold.ttf';
+  static const String iconAppIcon = 'assets/icon/app_icon.png';
+  static const String iconAppIconBackground = 'assets/icon/app_icon_background.png';
+  static const String iconAppIconForeground = 'assets/icon/app_icon_foreground.png';
 
 }
