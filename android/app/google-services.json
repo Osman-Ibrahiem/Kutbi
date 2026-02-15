@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988416876830",
+    "project_id": "kutbi-store",
+    "storage_bucket": "kutbi-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988416876830:android:ea6e9ec9aa843250eae90f",
+        "android_client_info": {
+          "package_name": "com.linkdev.kutbi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrwOGAO6P5uP2lzDkgm3GEkcp7QfdTxyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
