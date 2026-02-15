@@ -9,5 +9,6 @@ class Assets {
   static const String iconAppIcon = 'assets/icon/app_icon.png';
   static const String iconAppIconBackground = 'assets/icon/app_icon_background.png';
   static const String iconAppIconForeground = 'assets/icon/app_icon_foreground.png';
+  static const String iconSplashLogoAndroid12 = 'assets/icon/splash_logo_android12.png';
 
 }

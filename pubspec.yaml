@@ -51,6 +51,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.14.4
   rename: ^3.1.0
+  flutter_native_splash: ^2.4.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -110,3 +111,17 @@ flutter_launcher_icons:
 
 flutter_intl:
   enabled: true
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: true
+
+  color: "#ED8C1D"
+  image: assets/icon/app_icon_foreground.png
+
+  android_12:
+    color: "#ED8C1D"
+    image: assets/icon/splash_logo_android12.png
+
+  web_image_mode: center
