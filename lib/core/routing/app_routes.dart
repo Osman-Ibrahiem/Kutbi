@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kutbi/features/splash/splash_screen.dart';
 
 class AppRoutes {
   static const initial = splash;
@@ -6,6 +7,6 @@ class AppRoutes {
   static const splash = '/';
 
   static final Map<String, WidgetBuilder> routes = {
-    splash: (_) => const Placeholder(),
+    splash: (_) => const SplashScreen(),
   };
 }
