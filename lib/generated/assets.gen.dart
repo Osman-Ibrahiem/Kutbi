@@ -25,18 +25,35 @@ class $AssetsIconGen {
   AssetGenImage get appIconForeground =>
       const AssetGenImage('assets/icon/app_icon_foreground.png');
 
+  /// File path: assets/icon/splash_logo_android12.png
+  AssetGenImage get splashLogoAndroid12 =>
+      const AssetGenImage('assets/icon/splash_logo_android12.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     appIcon,
     appIconBackground,
     appIconForeground,
+    splashLogoAndroid12,
   ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/app_logo.png
+  AssetGenImage get appLogo =>
+      const AssetGenImage('assets/images/app_logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [appLogo];
 }
 
 class Assets {
   const Assets._();
 
   static const $AssetsIconGen icon = $AssetsIconGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
