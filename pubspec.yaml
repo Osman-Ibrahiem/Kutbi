@@ -113,10 +113,12 @@ flutter_launcher_icons:
   adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
 
 flutter_gen:
-  output: lib/generated/
+  output: lib/core/generated/
 
 flutter_intl:
   enabled: true
+  arb_dir: lib/core/l10n
+  output_dir: lib/core/generated
 
 flutter_native_splash:
   android: true

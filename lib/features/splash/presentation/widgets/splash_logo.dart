@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/generated/assets.gen.dart';
+import 'package:kutbi/core/generated/assets.gen.dart';
 
 class SplashLogo extends StatelessWidget {
   const SplashLogo({super.key});

@@ -3,7 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/routing/app_routes.dart';
 import 'core/theme/app_theme.dart';
-import 'generated/l10n.dart';
+import 'core/generated/l10n.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
