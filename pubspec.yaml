@@ -38,6 +38,7 @@ dependencies:
     sdk: flutter
   intl: ^0.20.2
   firebase_core: ^4.4.0
+  flutter_riverpod: ^3.2.1
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +54,7 @@ dev_dependencies:
   rename: ^3.1.0
   flutter_gen_runner: ^5.12.0
   build_runner: ^2.11.1
+  flutter_native_splash: ^2.4.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -111,7 +113,23 @@ flutter_launcher_icons:
   adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
 
 flutter_gen:
-  output: lib/generated/
+  output: lib/core/generated/
 
 flutter_intl:
   enabled: true
+  arb_dir: lib/core/l10n
+  output_dir: lib/core/generated
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: true
+
+  color: "#ED8C1D"
+  image: assets/icon/app_icon_foreground.png
+
+  android_12:
+    color: "#ED8C1D"
+    image: assets/icon/splash_logo_android12.png
+
+  web_image_mode: center
