@@ -1,0 +1,25 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "kutbi-store",
+          "appId": "1:988416876830:android:ea6e9ec9aa843250eae90f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "kutbi-store",
+          "configurations": {
+            "android": "1:988416876830:android:ea6e9ec9aa843250eae90f",
+            "ios": "1:988416876830:ios:824da171d0a3de92eae90f",
+            "macos": "1:988416876830:ios:824da171d0a3de92eae90f",
+            "web": "1:988416876830:web:aca2db88e0b22710eae90f",
+            "windows": "1:988416876830:web:177774437fd48a7beae90f"
+          }
+        }
+      }
+    }
+  }
+}
