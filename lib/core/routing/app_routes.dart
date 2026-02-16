@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:kutbi/features/login/presentation/page/login_screen.dart';
 import 'package:kutbi/features/splash/presentation/page/splash_screen.dart';
 
 class AppRoutes {
   static const initial = splash;
 
   static const splash = '/';
+  static const login = '/login';
 
   static final Map<String, WidgetBuilder> routes = {
     splash: (_) => const SplashScreen(),
+    login: (_) => const LoginScreen(),
   };
 }
