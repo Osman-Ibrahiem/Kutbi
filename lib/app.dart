@@ -4,8 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/routing/app_routes.dart';
 import 'generated/l10n.dart';
 
-class KutbiApp extends StatelessWidget {
-  const KutbiApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
