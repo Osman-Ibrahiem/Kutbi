@@ -5,8 +5,8 @@ import 'core/routing/app_routes.dart';
 import 'core/theme/app_theme.dart';
 import 'generated/l10n.dart';
 
-class KutbiApp extends StatelessWidget {
-  const KutbiApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
