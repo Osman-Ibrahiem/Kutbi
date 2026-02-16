@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
 
-import '../controllers/splash_providers.dart';
+import '../controllers/splash_controller.dart';
 
 class SplashBackground extends ConsumerWidget {
   const SplashBackground({super.key});

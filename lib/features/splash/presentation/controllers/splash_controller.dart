@@ -2,7 +2,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../domain/usecases/splash_delay_usecase.dart';
 import '../state/splash_state.dart';
-import 'splash_providers.dart';
 
 class SplashController extends Notifier<SplashState> {
   late final SplashDelayUseCase _usecase;
@@ -23,3 +22,6 @@ class SplashController extends Notifier<SplashState> {
     state = state.copyWith(showGradient: true);
   }
 }
+
+final splashControllerProvider =
+    NotifierProvider<SplashController, SplashState>(SplashController.new);
