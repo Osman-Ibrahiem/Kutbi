@@ -1,3 +1,13 @@
 {
-  "appTitle": "كتبي"
+  "appTitle": "كتبي",
+  "loginTitle": "تسجيل الدخول",
+  "welcomeBack": "مرحباً بعودتك",
+  "email": "البريد الإلكتروني",
+  "error_empty_email": "البريد الإلكتروني مطلوب",
+  "error_invalid_email": "البريد الإلكتروني غير صالح",
+  "password": "كلمة المرور",
+  "error_empty_password": "كلمة المرور مطلوبة",
+  "error_invalid_password": "اقل عدد مطلوب هو 6 احرف",
+  "btnLogin": "تسجيل الدخول",
+  "error_required_field": "هذا الحقل مطلوب"
 }

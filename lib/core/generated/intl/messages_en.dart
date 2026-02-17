@@ -23,5 +23,25 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("Kutbi"),
+    "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "error_empty_email": MessageLookupByLibrary.simpleMessage(
+      "Email is required",
+    ),
+    "error_empty_password": MessageLookupByLibrary.simpleMessage(
+      "Password is required",
+    ),
+    "error_invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Enter a valid email",
+    ),
+    "error_invalid_password": MessageLookupByLibrary.simpleMessage(
+      "Min 6 characters",
+    ),
+    "error_required_field": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
+    "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };
 }

@@ -23,5 +23,25 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("كتبي"),
+    "btnLogin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "error_empty_email": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني مطلوب",
+    ),
+    "error_empty_password": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور مطلوبة",
+    ),
+    "error_invalid_email": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني غير صالح",
+    ),
+    "error_invalid_password": MessageLookupByLibrary.simpleMessage(
+      "اقل عدد مطلوب هو 6 احرف",
+    ),
+    "error_required_field": MessageLookupByLibrary.simpleMessage(
+      "هذا الحقل مطلوب",
+    ),
+    "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };
 }

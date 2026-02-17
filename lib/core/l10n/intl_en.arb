@@ -1,3 +1,13 @@
 {
-  "appTitle": "Kutbi"
+  "appTitle": "Kutbi",
+  "loginTitle": "Login",
+  "welcomeBack": "Welcome back",
+  "email": "Email",
+  "error_empty_email": "Email is required",
+  "error_invalid_email": "Enter a valid email",
+  "password": "Password",
+  "error_empty_password": "Password is required",
+  "error_invalid_password": "Min 6 characters",
+  "btnLogin": "Login",
+  "error_required_field": "This field is required"
 }

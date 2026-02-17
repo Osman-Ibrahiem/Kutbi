@@ -58,6 +58,86 @@ class S {
   String get appTitle {
     return Intl.message('Kutbi', name: 'appTitle', desc: '', args: []);
   }
+
+  /// `Login`
+  String get loginTitle {
+    return Intl.message('Login', name: 'loginTitle', desc: '', args: []);
+  }
+
+  /// `Welcome back`
+  String get welcomeBack {
+    return Intl.message(
+      'Welcome back',
+      name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Email is required`
+  String get error_empty_email {
+    return Intl.message(
+      'Email is required',
+      name: 'error_empty_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a valid email`
+  String get error_invalid_email {
+    return Intl.message(
+      'Enter a valid email',
+      name: 'error_invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Password is required`
+  String get error_empty_password {
+    return Intl.message(
+      'Password is required',
+      name: 'error_empty_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Min 6 characters`
+  String get error_invalid_password {
+    return Intl.message(
+      'Min 6 characters',
+      name: 'error_invalid_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get btnLogin {
+    return Intl.message('Login', name: 'btnLogin', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get error_required_field {
+    return Intl.message(
+      'This field is required',
+      name: 'error_required_field',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
