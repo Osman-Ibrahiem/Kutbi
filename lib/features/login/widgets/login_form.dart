@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/assets.gen.dart';
 import 'package:kutbi/core/generated/l10n.dart';
+import 'package:kutbi/core/theme/app_colors.dart';
 import 'package:kutbi/core/widgets/email_field.dart';
 import 'package:kutbi/core/widgets/password_field.dart';
 import 'package:kutbi/core/widgets/primary_button.dart';
-import 'package:kutbi/features/login/presentation/controllers/login_controller.dart';
+import 'package:kutbi/core/widgets/secondary_button.dart';
 
+import '../controller/login_controller.dart';
 import '../state/login_state.dart';
 
 class LoginForm extends ConsumerStatefulWidget {
@@ -30,9 +32,7 @@ class _LoginFormState extends ConsumerState<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    ref.listen<LoginState>(loginControllerProvider, _handleStateChange);
-    final loginState = ref.watch(loginControllerProvider);
-
+    final isLoading = ref.watch(loginControllerProvider) is Loading;
     final theme = Theme.of(context);
     return Form(
       key: _formKey,
@@ -56,24 +56,42 @@ class _LoginFormState extends ConsumerState<LoginForm> {
           EmailField(
             controller: _emailController,
             textInputAction: TextInputAction.next,
-            enabled: !loginState.isLoading,
+            enabled: !isLoading,
           ),
           const SizedBox(height: 12),
 
           PasswordField(
             controller: _passwordController,
             textInputAction: TextInputAction.done,
-            enabled: !loginState.isLoading,
+            enabled: !isLoading,
             onFieldSubmitted: (_) => _submit(),
           ),
           const SizedBox(height: 20),
 
           PrimaryButton.text(
             text: S.of(context).btnLogin,
-            isLoading: loginState.isLoading,
+            isLoading: isLoading,
+            enabled: !isLoading,
             onPressed: _submit,
           ),
 
+          const SizedBox(height: 12),
+          SecondaryButton(
+            enabled: !isLoading,
+            child: Text.rich(
+              TextSpan(
+                text: S.of(context).donotHaveAccount,
+                style: TextStyle(color: AppColors.grey),
+                children: [
+                  TextSpan(
+                    text: S.of(context).createAccount,
+                    style: TextStyle(color: AppColors.primary),
+                  ),
+                ],
+              ),
+            ),
+            onPressed: () {},
+          ),
           const SizedBox(height: 12),
         ],
       ),
@@ -90,19 +108,5 @@ class _LoginFormState extends ConsumerState<LoginForm> {
     await ref
         .read(loginControllerProvider.notifier)
         .login(email: email, password: password);
-  }
-
-  void _handleStateChange(LoginState? previous, LoginState next) {
-    if (next.status == LoginStatus.success) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('✅ تم تسجيل الدخول بنجاح!')));
-    } else if (next.status == LoginStatus.failure) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(next.errorMessage ?? S.of(context).error_unknown),
-        ),
-      );
-    }
   }
 }

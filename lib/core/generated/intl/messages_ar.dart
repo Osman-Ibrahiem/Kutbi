@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("كتبي"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "donotHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "error_empty_email": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
@@ -31,8 +33,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_empty_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور مطلوبة",
     ),
+    "error_invalid_credentials": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    ),
     "error_invalid_email": MessageLookupByLibrary.simpleMessage(
-      "البريد الإلكتروني غير صالح",
+      "صيغة البريد الإلكتروني غير صحيحة.",
     ),
     "error_invalid_password": MessageLookupByLibrary.simpleMessage(
       "اقل عدد مطلوب هو 6 احرف",
@@ -40,26 +45,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_login_faild": MessageLookupByLibrary.simpleMessage(
       "فشل تسجيل الدخول، حاول تاني.",
     ),
+    "error_no_internet": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت. تحقق من الشبكة.",
+    ),
+    "error_operation_not_allowed": MessageLookupByLibrary.simpleMessage(
+      "طريقة تسجيل الدخول هذه غير مفعلة.",
+    ),
     "error_required_field": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
     ),
     "error_too_many_requests": MessageLookupByLibrary.simpleMessage(
-      "كتير أوي، استنى شوية وحاول تاني.",
+      "تم إجراء محاولات كثيرة. يرجى المحاولة لاحقًا.",
     ),
     "error_unknown": MessageLookupByLibrary.simpleMessage(
-      "حصل خطأ غير متوقع، حاول تاني.",
+      "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
     ),
     "error_user_disabled": MessageLookupByLibrary.simpleMessage(
-      "الحساب ده اتعطل.",
+      "تم إيقاف هذا الحساب. يرجى التواصل مع الدعم.",
     ),
     "error_user_not_found": MessageLookupByLibrary.simpleMessage(
-      "مفيش حساب بالإيميل ده.",
+      "لا يوجد حساب مرتبط بهذا البريد الإلكتروني.",
     ),
     "error_wrong_password": MessageLookupByLibrary.simpleMessage(
-      "الباسورد غلط.",
+      "كلمة المرور غير صحيحة. حاول مرة أخرى.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "success_login": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح.",
+    ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };
 }

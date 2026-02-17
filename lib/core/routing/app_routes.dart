@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/features/login/presentation/page/login_screen.dart';
+import 'package:kutbi/features/login/page/login_screen.dart';
 import 'package:kutbi/features/splash/presentation/page/splash_screen.dart';
 
 class AppRoutes {

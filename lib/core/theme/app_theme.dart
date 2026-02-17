@@ -96,7 +96,13 @@ class AppTheme {
 
       // ================= Text Button =================
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: colorScheme.primary),
+        style: TextButton.styleFrom(
+          foregroundColor: colorScheme.primary,
+          minimumSize: const Size.fromHeight(50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(defaultRadius),
+          ),
+        ),
       ),
 
       dividerTheme: DividerThemeData(color: dividerColor, thickness: 1),

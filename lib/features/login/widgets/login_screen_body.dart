@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/features/login/presentation/widgets/login_form.dart';
+
+import 'login_form.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({super.key});

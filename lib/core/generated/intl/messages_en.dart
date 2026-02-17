@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("Kutbi"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
+    "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
+    "donotHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? ",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "error_empty_email": MessageLookupByLibrary.simpleMessage(
       "Email is required",
@@ -31,31 +35,45 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_empty_password": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
+    "error_invalid_credentials": MessageLookupByLibrary.simpleMessage(
+      "Invalid email or password.",
+    ),
     "error_invalid_email": MessageLookupByLibrary.simpleMessage(
-      "Enter a valid email",
+      "The email address is not valid.",
     ),
     "error_invalid_password": MessageLookupByLibrary.simpleMessage(
       "Min 6 characters",
     ),
     "error_login_faild": MessageLookupByLibrary.simpleMessage("Login failed."),
+    "error_no_internet": MessageLookupByLibrary.simpleMessage(
+      "No internet connection. Please check your network.",
+    ),
+    "error_operation_not_allowed": MessageLookupByLibrary.simpleMessage(
+      "This sign-in method is not enabled.",
+    ),
     "error_required_field": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
     "error_too_many_requests": MessageLookupByLibrary.simpleMessage(
-      "Too many requests. Try again later.",
+      "Too many attempts. Please try again later.",
     ),
-    "error_unknown": MessageLookupByLibrary.simpleMessage("Unknown error."),
+    "error_unknown": MessageLookupByLibrary.simpleMessage(
+      "Something went wrong. Please try again.",
+    ),
     "error_user_disabled": MessageLookupByLibrary.simpleMessage(
-      "This account has been disabled.",
+      "This account has been disabled. Please contact support.",
     ),
     "error_user_not_found": MessageLookupByLibrary.simpleMessage(
-      "User not found.",
+      "No account found with this email.",
     ),
     "error_wrong_password": MessageLookupByLibrary.simpleMessage(
-      "Wrong Password.",
+      "Incorrect password. Please try again.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "success_login": MessageLookupByLibrary.simpleMessage(
+      "Logged in successfully.",
+    ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };
 }
