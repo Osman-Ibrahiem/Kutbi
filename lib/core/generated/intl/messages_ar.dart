@@ -37,8 +37,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_invalid_password": MessageLookupByLibrary.simpleMessage(
       "اقل عدد مطلوب هو 6 احرف",
     ),
+    "error_login_faild": MessageLookupByLibrary.simpleMessage(
+      "فشل تسجيل الدخول، حاول تاني.",
+    ),
     "error_required_field": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
+    ),
+    "error_too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "كتير أوي، استنى شوية وحاول تاني.",
+    ),
+    "error_unknown": MessageLookupByLibrary.simpleMessage(
+      "حصل خطأ غير متوقع، حاول تاني.",
+    ),
+    "error_user_disabled": MessageLookupByLibrary.simpleMessage(
+      "الحساب ده اتعطل.",
+    ),
+    "error_user_not_found": MessageLookupByLibrary.simpleMessage(
+      "مفيش حساب بالإيميل ده.",
+    ),
+    "error_wrong_password": MessageLookupByLibrary.simpleMessage(
+      "الباسورد غلط.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),

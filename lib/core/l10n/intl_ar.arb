@@ -9,5 +9,11 @@
   "error_empty_password": "كلمة المرور مطلوبة",
   "error_invalid_password": "اقل عدد مطلوب هو 6 احرف",
   "btnLogin": "تسجيل الدخول",
-  "error_required_field": "هذا الحقل مطلوب"
+  "error_required_field": "هذا الحقل مطلوب",
+  "error_user_not_found": "مفيش حساب بالإيميل ده.",
+  "error_wrong_password": "الباسورد غلط.",
+  "error_user_disabled": "الحساب ده اتعطل.",
+  "error_too_many_requests": "كتير أوي، استنى شوية وحاول تاني.",
+  "error_login_faild": "فشل تسجيل الدخول، حاول تاني.",
+  "error_unknown": "حصل خطأ غير متوقع، حاول تاني."
 }

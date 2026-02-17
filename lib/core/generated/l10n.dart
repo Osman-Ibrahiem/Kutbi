@@ -138,6 +138,66 @@ class S {
       args: [],
     );
   }
+
+  /// `User not found.`
+  String get error_user_not_found {
+    return Intl.message(
+      'User not found.',
+      name: 'error_user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong Password.`
+  String get error_wrong_password {
+    return Intl.message(
+      'Wrong Password.',
+      name: 'error_wrong_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This account has been disabled.`
+  String get error_user_disabled {
+    return Intl.message(
+      'This account has been disabled.',
+      name: 'error_user_disabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many requests. Try again later.`
+  String get error_too_many_requests {
+    return Intl.message(
+      'Too many requests. Try again later.',
+      name: 'error_too_many_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login failed.`
+  String get error_login_faild {
+    return Intl.message(
+      'Login failed.',
+      name: 'error_login_faild',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error.`
+  String get error_unknown {
+    return Intl.message(
+      'Unknown error.',
+      name: 'error_unknown',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

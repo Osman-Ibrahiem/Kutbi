@@ -9,5 +9,11 @@
   "error_empty_password": "Password is required",
   "error_invalid_password": "Min 6 characters",
   "btnLogin": "Login",
-  "error_required_field": "This field is required"
+  "error_required_field": "This field is required",
+  "error_user_not_found": "User not found.",
+  "error_wrong_password": "Wrong Password.",
+  "error_user_disabled": "This account has been disabled.",
+  "error_too_many_requests": "Too many requests. Try again later.",
+  "error_login_faild": "Login failed.",
+  "error_unknown": "Unknown error."
 }

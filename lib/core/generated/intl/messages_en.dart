@@ -37,8 +37,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_invalid_password": MessageLookupByLibrary.simpleMessage(
       "Min 6 characters",
     ),
+    "error_login_faild": MessageLookupByLibrary.simpleMessage("Login failed."),
     "error_required_field": MessageLookupByLibrary.simpleMessage(
       "This field is required",
+    ),
+    "error_too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "Too many requests. Try again later.",
+    ),
+    "error_unknown": MessageLookupByLibrary.simpleMessage("Unknown error."),
+    "error_user_disabled": MessageLookupByLibrary.simpleMessage(
+      "This account has been disabled.",
+    ),
+    "error_user_not_found": MessageLookupByLibrary.simpleMessage(
+      "User not found.",
+    ),
+    "error_wrong_password": MessageLookupByLibrary.simpleMessage(
+      "Wrong Password.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
