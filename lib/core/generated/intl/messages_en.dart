@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "error_email_already_used": MessageLookupByLibrary.simpleMessage(
+      "The email address is already in use.",
+    ),
     "error_empty_email": MessageLookupByLibrary.simpleMessage(
       "Email is required",
     ),
@@ -85,6 +88,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "success_login": MessageLookupByLibrary.simpleMessage(
       "Logged in successfully.",
+    ),
+    "success_register": MessageLookupByLibrary.simpleMessage(
+      "Registered successfully.",
     ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };

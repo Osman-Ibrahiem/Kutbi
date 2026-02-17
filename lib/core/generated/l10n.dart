@@ -219,6 +219,16 @@ class S {
     );
   }
 
+  /// `The email address is already in use.`
+  String get error_email_already_used {
+    return Intl.message(
+      'The email address is already in use.',
+      name: 'error_email_already_used',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Something went wrong. Please try again.`
   String get error_unknown {
     return Intl.message(
@@ -307,6 +317,16 @@ class S {
   /// `Register`
   String get btnRegister {
     return Intl.message('Register', name: 'btnRegister', desc: '', args: []);
+  }
+
+  /// `Registered successfully.`
+  String get success_register {
+    return Intl.message(
+      'Registered successfully.',
+      name: 'success_register',
+      desc: '',
+      args: [],
+    );
   }
 }
 

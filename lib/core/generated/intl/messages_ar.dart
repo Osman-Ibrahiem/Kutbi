@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "error_email_already_used": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني مسجل من قبل.",
+    ),
     "error_empty_email": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
     ),
@@ -83,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "registerTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "success_login": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح.",
+    ),
+    "success_register": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء الحساب بنجاح.",
     ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };

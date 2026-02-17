@@ -6,6 +6,12 @@ import 'firebase_auth_data_source.dart';
 
 abstract class AuthRemoteDataSource {
   Future<UserModel> login({required String email, required String password});
+
+  Future<UserModel> register({
+    required String name,
+    required String email,
+    required String password,
+  });
 }
 
 final firebaseAuthProvider = Provider<FirebaseAuth>(
