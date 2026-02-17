@@ -8,6 +8,9 @@ class PasswordField extends StatefulWidget {
   final ValueChanged<String>? onFieldSubmitted;
   final String? initialValue;
   final ValueChanged<String>? onChanged;
+  final FormFieldValidator<String>? validator;
+  final String? hintText;
+  final TextEditingController? matchWithController;
 
   const PasswordField({
     super.key,
@@ -17,6 +20,9 @@ class PasswordField extends StatefulWidget {
     this.textInputAction,
     this.onChanged,
     this.onFieldSubmitted,
+    this.validator,
+    this.hintText,
+    this.matchWithController,
   });
 
   @override
@@ -37,7 +43,7 @@ class _PasswordFieldState extends State<PasswordField> {
       onFieldSubmitted: widget.onFieldSubmitted,
       onChanged: widget.onChanged,
       decoration: InputDecoration(
-        hintText: S.of(context).password,
+        hintText: widget.hintText ?? S.of(context).password,
         prefixIcon: const Icon(Icons.lock_outline),
         suffixIcon: IconButton(
           onPressed: () => setState(() => _obscure = !_obscure),
@@ -48,19 +54,28 @@ class _PasswordFieldState extends State<PasswordField> {
           ),
         ),
       ),
-      validator: (v) {
-        final value = v ?? '';
-
-        if (value.isEmpty) {
-          return S.of(context).error_empty_password;
-        }
-
-        if (value.length < 6) {
-          return S.of(context).error_invalid_password;
-        }
-
-        return null;
-      },
+      validator: (v) => (widget.validator != null)
+          ? widget.validator!(v)
+          : _defaultValidator(context, v),
     );
+  }
+
+  String? _defaultValidator(BuildContext context, String? v) {
+    final value = (v ?? '').trim();
+
+    if (value.isEmpty) {
+      return S.of(context).error_empty_password;
+    }
+
+    if (value.length < 6) {
+      return S.of(context).error_invalid_password;
+    }
+
+    final other = widget.matchWithController?.text.trim();
+    if (other != null && other.isNotEmpty && other != value) {
+      return S.of(context).error_passwords_not_match;
+    }
+
+    return null;
   }
 }

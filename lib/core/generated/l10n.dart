@@ -258,6 +258,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Register new account`
+  String get registerTitle {
+    return Intl.message(
+      'Register new account',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Name is required`
+  String get error_name_empty {
+    return Intl.message(
+      'Name is required',
+      name: 'error_name_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords doesn't match`
+  String get error_passwords_not_match {
+    return Intl.message(
+      'Passwords doesn\'t match',
+      name: 'error_passwords_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get btnRegister {
+    return Intl.message('Register', name: 'btnRegister', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
