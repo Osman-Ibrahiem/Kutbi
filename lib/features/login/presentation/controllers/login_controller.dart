@@ -13,7 +13,7 @@ class LoginController extends Notifier<LoginState> {
     return const LoginState();
   }
 
-  Future<void> login(String email, String password) async {
+  Future<void> login({required String email, required String password}) async {
     state = state.copyWith(status: LoginStatus.loading);
 
     final AuthResult result = await _authService.login(
