@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/assets.gen.dart';
 import 'package:kutbi/core/generated/l10n.dart';
+import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
 import 'package:kutbi/core/widgets/email_field.dart';
 import 'package:kutbi/core/widgets/password_field.dart';
@@ -90,7 +91,9 @@ class _LoginFormState extends ConsumerState<LoginForm> {
                 ],
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.register);
+            },
           ),
           const SizedBox(height: 12),
         ],
