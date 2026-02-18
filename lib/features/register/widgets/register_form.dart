@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/assets.gen.dart';
 import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/widgets/email_field.dart';
-import 'package:kutbi/core/widgets/name_field.dart';
-import 'package:kutbi/core/widgets/password_field.dart';
+import 'package:kutbi/core/widgets/input_field.dart';
 import 'package:kutbi/core/widgets/primary_button.dart';
 
 import '../controller/register_controller.dart';
@@ -47,28 +45,28 @@ class _RegisterFormState extends ConsumerState<RegisterForm> {
           ),
           const SizedBox(height: 24),
 
-          NameField(
+          InputField.name(
             controller: _nameController,
             textInputAction: TextInputAction.next,
             enabled: !isLoading,
           ),
           const SizedBox(height: 12),
 
-          EmailField(
+          InputField.email(
             controller: _emailController,
             textInputAction: TextInputAction.next,
             enabled: !isLoading,
           ),
           const SizedBox(height: 12),
 
-          PasswordField(
+          InputField.password(
             controller: _passwordController,
             textInputAction: TextInputAction.next,
             enabled: !isLoading,
           ),
           const SizedBox(height: 12),
 
-          PasswordField(
+          InputField.password(
             matchWithController: _passwordController,
             textInputAction: TextInputAction.done,
             hintText: S.of(context).confirmPassword,
