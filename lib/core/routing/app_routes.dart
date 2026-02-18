@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kutbi/features/books_list/page/books_list_screen.dart';
 import 'package:kutbi/features/login/page/login_screen.dart';
 import 'package:kutbi/features/register/page/register_screen.dart';
-import 'package:kutbi/features/splash/presentation/page/splash_screen.dart';
+import 'package:kutbi/features/splash/page/splash_screen.dart';
 
 class AppRoutes {
   static const initial = splash;

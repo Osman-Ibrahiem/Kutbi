@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
 
 import '../controllers/splash_controller.dart';
+import '../state/splash_state.dart';
 
 class SplashBackground extends ConsumerWidget {
   const SplashBackground({super.key});
@@ -10,7 +11,7 @@ class SplashBackground extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final showGradient = ref.watch(
-      splashControllerProvider.select((s) => s.showGradient),
+      splashControllerProvider.select((s) => s is! Solid),
     );
 
     final colors = showGradient
