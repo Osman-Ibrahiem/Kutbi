@@ -31,6 +31,5 @@
   "confirmPassword": "تأكيد كلمة المرور",
   "btnRegister": "تسجيل",
   "success_register": "تم إنشاء الحساب بنجاح.",
-  "createAccount": "إنشاء حساب",
   "appSubTitle": "عالم من الكتب"
 }
