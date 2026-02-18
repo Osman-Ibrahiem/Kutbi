@@ -82,6 +82,7 @@ class InputField extends StatefulWidget {
   factory InputField.password({
     final Key? key,
     final TextEditingController? controller,
+    final TextEditingController? matchWithController,
     final String? initialValue,
     final bool enabled = true,
     final TextInputType? keyboardType,
@@ -104,6 +105,11 @@ class InputField extends StatefulWidget {
         return S.current.error_invalid_password;
       }
 
+      final other = matchWithController?.text.trim();
+      if (other != null && other.isNotEmpty && other != value) {
+        return S.current.error_passwords_not_match;
+      }
+
       return null;
     }
 
@@ -115,6 +121,41 @@ class InputField extends StatefulWidget {
       hintText: hintText ?? S.current.password,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
+      validator: validator ?? defaultValidator,
+    );
+  }
+
+  factory InputField.name({
+    final Key? key,
+    final TextEditingController? controller,
+    final String? initialValue,
+    final bool enabled = true,
+    final TextInputType? keyboardType = TextInputType.name,
+    final TextInputAction? textInputAction,
+    final ValueChanged<String>? onChanged,
+    final ValueChanged<String>? onFieldSubmitted,
+    final String? hintText,
+    final Widget? prefixIcon = const Icon(Icons.person),
+    final Widget? suffixIcon,
+    final FormFieldValidator<String>? validator,
+  }) {
+    String? defaultValidator(v) {
+      final value = (v ?? '').trim();
+
+      if (value.isEmpty) {
+        return S.current.error_name_empty;
+      }
+
+      return null;
+    }
+
+    return InputField(
+      key: key,
+      controller: controller,
+      keyboardType: keyboardType,
+      textInputAction: textInputAction,
+      hintText: hintText ?? S.current.name,
+      prefixIcon: prefixIcon,
       validator: validator ?? defaultValidator,
     );
   }

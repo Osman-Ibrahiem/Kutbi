@@ -24,11 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("Kutbi"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
+    "btnRegister": MessageLookupByLibrary.simpleMessage("Register"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "error_email_already_used": MessageLookupByLibrary.simpleMessage(
+      "The email address is already in use.",
+    ),
     "error_empty_email": MessageLookupByLibrary.simpleMessage(
       "Email is required",
     ),
@@ -45,11 +50,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Min 6 characters",
     ),
     "error_login_faild": MessageLookupByLibrary.simpleMessage("Login failed."),
+    "error_name_empty": MessageLookupByLibrary.simpleMessage(
+      "Name is required",
+    ),
     "error_no_internet": MessageLookupByLibrary.simpleMessage(
       "No internet connection. Please check your network.",
     ),
     "error_operation_not_allowed": MessageLookupByLibrary.simpleMessage(
       "This sign-in method is not enabled.",
+    ),
+    "error_passwords_not_match": MessageLookupByLibrary.simpleMessage(
+      "Passwords doesn\'t match",
     ),
     "error_required_field": MessageLookupByLibrary.simpleMessage(
       "This field is required",
@@ -70,9 +81,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Incorrect password. Please try again.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "registerTitle": MessageLookupByLibrary.simpleMessage(
+      "Register new account",
+    ),
     "success_login": MessageLookupByLibrary.simpleMessage(
       "Logged in successfully.",
+    ),
+    "success_register": MessageLookupByLibrary.simpleMessage(
+      "Registered successfully.",
     ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };

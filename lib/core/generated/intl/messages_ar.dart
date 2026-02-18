@@ -24,9 +24,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appTitle": MessageLookupByLibrary.simpleMessage("كتبي"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "btnRegister": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "error_email_already_used": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني مسجل من قبل.",
+    ),
     "error_empty_email": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
     ),
@@ -45,11 +52,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_login_faild": MessageLookupByLibrary.simpleMessage(
       "فشل تسجيل الدخول، حاول تاني.",
     ),
+    "error_name_empty": MessageLookupByLibrary.simpleMessage("الإسم مطلوب"),
     "error_no_internet": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت. تحقق من الشبكة.",
     ),
     "error_operation_not_allowed": MessageLookupByLibrary.simpleMessage(
       "طريقة تسجيل الدخول هذه غير مفعلة.",
+    ),
+    "error_passwords_not_match": MessageLookupByLibrary.simpleMessage(
+      "كلمتا المرور غير متطابقة",
     ),
     "error_required_field": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب",
@@ -70,9 +81,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور غير صحيحة. حاول مرة أخرى.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "name": MessageLookupByLibrary.simpleMessage("الإسم"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "registerTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "success_login": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح.",
+    ),
+    "success_register": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء الحساب بنجاح.",
     ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };

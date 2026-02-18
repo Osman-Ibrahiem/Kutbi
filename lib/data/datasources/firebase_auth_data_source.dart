@@ -39,6 +39,41 @@ class FirebaseAuthDataSource implements AuthRemoteDataSource {
     }
   }
 
+  @override
+  Future<UserModel> register({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      await _auth.signOut();
+      final credential = await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      final user = credential.user;
+
+      if (user != null) {
+        await user.updateDisplayName(name);
+        await user.reload();
+      }
+
+      return UserModel(
+        id: user?.uid,
+        name: user?.displayName,
+        email: user?.email,
+        photoUrl: user?.photoURL,
+        token: await user?.getIdToken(),
+      );
+    } on FirebaseAuthException catch (e) {
+      debugPrint('FirebaseAuthException code: ${e.code}');
+      throw AppException(_mapFirebaseError(e.code));
+    } catch (_) {
+      throw AppException(S.current.error_unknown);
+    }
+  }
+
   String _mapFirebaseError(String code) {
     switch (code) {
       case 'user-not-found':
@@ -57,6 +92,8 @@ class FirebaseAuthDataSource implements AuthRemoteDataSource {
         return S.current.error_no_internet;
       case 'operation-not-allowed':
         return S.current.error_operation_not_allowed;
+      case 'email-already-in-use':
+        return S.current.error_email_already_used;
       default:
         return S.current.error_unknown;
     }

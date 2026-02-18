@@ -19,8 +19,16 @@
   "error_invalid_credentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
   "error_no_internet": "لا يوجد اتصال بالإنترنت. تحقق من الشبكة.",
   "error_operation_not_allowed": "طريقة تسجيل الدخول هذه غير مفعلة.",
+  "error_email_already_used": "البريد الإلكتروني مسجل من قبل.",
   "error_unknown": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
   "success_login": "تم تسجيل الدخول بنجاح.",
   "donotHaveAccount": "ليس لديك حساب؟ ",
-  "createAccount": "إنشاء حساب"
+  "createAccount": "إنشاء حساب",
+  "registerTitle": "إنشاء حساب جديد",
+  "name": "الإسم",
+  "error_name_empty": "الإسم مطلوب",
+  "error_passwords_not_match": "كلمتا المرور غير متطابقة",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "btnRegister": "تسجيل",
+  "success_register": "تم إنشاء الحساب بنجاح."
 }

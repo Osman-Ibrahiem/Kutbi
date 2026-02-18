@@ -19,8 +19,16 @@
   "error_invalid_credentials": "Invalid email or password.",
   "error_no_internet": "No internet connection. Please check your network.",
   "error_operation_not_allowed": "This sign-in method is not enabled.",
+  "error_email_already_used": "The email address is already in use.",
   "error_unknown": "Something went wrong. Please try again.",
   "success_login": "Logged in successfully.",
   "donotHaveAccount": "Don't have an account? ",
-  "createAccount": "Create account"
+  "createAccount": "Create account",
+  "registerTitle": "Register new account",
+  "name": "Name",
+  "error_name_empty": "Name is required",
+  "error_passwords_not_match": "Passwords doesn't match",
+  "confirmPassword": "Confirm Password",
+  "btnRegister": "Register",
+  "success_register": "Registered successfully."
 }
