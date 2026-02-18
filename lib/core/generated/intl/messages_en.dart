@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "btnRegister": MessageLookupByLibrary.simpleMessage("Register"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
@@ -83,10 +84,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "pages": MessageLookupByLibrary.simpleMessage("Pages"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "publicationYear": MessageLookupByLibrary.simpleMessage("Publication year"),
     "registerTitle": MessageLookupByLibrary.simpleMessage(
       "Register new account",
     ),
+    "showLess": MessageLookupByLibrary.simpleMessage("Show Less"),
+    "showMore": MessageLookupByLibrary.simpleMessage("Show More"),
     "success_login": MessageLookupByLibrary.simpleMessage(
       "Logged in successfully.",
     ),

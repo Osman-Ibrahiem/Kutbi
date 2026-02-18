@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكيد كلمة المرور",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "description": MessageLookupByLibrary.simpleMessage("الوصف"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "error_email_already_used": MessageLookupByLibrary.simpleMessage(
@@ -83,8 +84,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
+    "pages": MessageLookupByLibrary.simpleMessage("الصفحات"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "publicationYear": MessageLookupByLibrary.simpleMessage("سنة النشر"),
     "registerTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "showLess": MessageLookupByLibrary.simpleMessage("عرض أقل"),
+    "showMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
     "success_login": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح.",
     ),
