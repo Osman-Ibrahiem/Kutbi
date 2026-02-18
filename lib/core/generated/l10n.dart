@@ -219,6 +219,26 @@ class S {
     );
   }
 
+  /// `The email address is already in use.`
+  String get error_email_already_used {
+    return Intl.message(
+      'The email address is already in use.',
+      name: 'error_email_already_used',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The email address is already in use.`
+  String get error_email_already_used {
+    return Intl.message(
+      'The email address is already in use.',
+      name: 'error_email_already_used',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Something went wrong. Please try again.`
   String get error_unknown {
     return Intl.message(
@@ -254,6 +274,136 @@ class S {
     return Intl.message(
       'Create account',
       name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register new account`
+  String get registerTitle {
+    return Intl.message(
+      'Register new account',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Name is required`
+  String get error_name_empty {
+    return Intl.message(
+      'Name is required',
+      name: 'error_name_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords doesn't match`
+  String get error_passwords_not_match {
+    return Intl.message(
+      'Passwords doesn\'t match',
+      name: 'error_passwords_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get btnRegister {
+    return Intl.message('Register', name: 'btnRegister', desc: '', args: []);
+  }
+
+  /// `Registered successfully.`
+  String get success_register {
+    return Intl.message(
+      'Registered successfully.',
+      name: 'success_register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A world of books`
+  String get appSubTitle {
+    return Intl.message(
+      'A world of books',
+      name: 'appSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register new account`
+  String get registerTitle {
+    return Intl.message(
+      'Register new account',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Name is required`
+  String get error_name_empty {
+    return Intl.message(
+      'Name is required',
+      name: 'error_name_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords doesn't match`
+  String get error_passwords_not_match {
+    return Intl.message(
+      'Passwords doesn\'t match',
+      name: 'error_passwords_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get btnRegister {
+    return Intl.message('Register', name: 'btnRegister', desc: '', args: []);
+  }
+
+  /// `Registered successfully.`
+  String get success_register {
+    return Intl.message(
+      'Registered successfully.',
+      name: 'success_register',
       desc: '',
       args: [],
     );
