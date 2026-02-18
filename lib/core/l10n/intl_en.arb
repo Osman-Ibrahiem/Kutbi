@@ -30,5 +30,6 @@
   "error_passwords_not_match": "Passwords doesn't match",
   "confirmPassword": "Confirm Password",
   "btnRegister": "Register",
-  "success_register": "Registered successfully."
+  "success_register": "Registered successfully.",
+  "appSubTitle": "A world of books"
 }

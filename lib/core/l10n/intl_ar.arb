@@ -30,5 +30,6 @@
   "error_passwords_not_match": "كلمتا المرور غير متطابقة",
   "confirmPassword": "تأكيد كلمة المرور",
   "btnRegister": "تسجيل",
-  "success_register": "تم إنشاء الحساب بنجاح."
+  "success_register": "تم إنشاء الحساب بنجاح.",
+  "appSubTitle": "عالم من الكتب"
 }

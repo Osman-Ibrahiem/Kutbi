@@ -328,6 +328,16 @@ class S {
       args: [],
     );
   }
+
+  /// `A world of books`
+  String get appSubTitle {
+    return Intl.message(
+      'A world of books',
+      name: 'appSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
