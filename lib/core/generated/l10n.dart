@@ -58,6 +58,206 @@ class S {
   String get appTitle {
     return Intl.message('Kutbi', name: 'appTitle', desc: '', args: []);
   }
+
+  /// `Login`
+  String get loginTitle {
+    return Intl.message('Login', name: 'loginTitle', desc: '', args: []);
+  }
+
+  /// `Welcome back`
+  String get welcomeBack {
+    return Intl.message(
+      'Welcome back',
+      name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Email is required`
+  String get error_empty_email {
+    return Intl.message(
+      'Email is required',
+      name: 'error_empty_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The email address is not valid.`
+  String get error_invalid_email {
+    return Intl.message(
+      'The email address is not valid.',
+      name: 'error_invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Password is required`
+  String get error_empty_password {
+    return Intl.message(
+      'Password is required',
+      name: 'error_empty_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Min 6 characters`
+  String get error_invalid_password {
+    return Intl.message(
+      'Min 6 characters',
+      name: 'error_invalid_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get btnLogin {
+    return Intl.message('Login', name: 'btnLogin', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get error_required_field {
+    return Intl.message(
+      'This field is required',
+      name: 'error_required_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No account found with this email.`
+  String get error_user_not_found {
+    return Intl.message(
+      'No account found with this email.',
+      name: 'error_user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect password. Please try again.`
+  String get error_wrong_password {
+    return Intl.message(
+      'Incorrect password. Please try again.',
+      name: 'error_wrong_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This account has been disabled. Please contact support.`
+  String get error_user_disabled {
+    return Intl.message(
+      'This account has been disabled. Please contact support.',
+      name: 'error_user_disabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many attempts. Please try again later.`
+  String get error_too_many_requests {
+    return Intl.message(
+      'Too many attempts. Please try again later.',
+      name: 'error_too_many_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login failed.`
+  String get error_login_faild {
+    return Intl.message(
+      'Login failed.',
+      name: 'error_login_faild',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email or password.`
+  String get error_invalid_credentials {
+    return Intl.message(
+      'Invalid email or password.',
+      name: 'error_invalid_credentials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection. Please check your network.`
+  String get error_no_internet {
+    return Intl.message(
+      'No internet connection. Please check your network.',
+      name: 'error_no_internet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This sign-in method is not enabled.`
+  String get error_operation_not_allowed {
+    return Intl.message(
+      'This sign-in method is not enabled.',
+      name: 'error_operation_not_allowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. Please try again.`
+  String get error_unknown {
+    return Intl.message(
+      'Something went wrong. Please try again.',
+      name: 'error_unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logged in successfully.`
+  String get success_login {
+    return Intl.message(
+      'Logged in successfully.',
+      name: 'success_login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account? `
+  String get donotHaveAccount {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'donotHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create account`
+  String get createAccount {
+    return Intl.message(
+      'Create account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

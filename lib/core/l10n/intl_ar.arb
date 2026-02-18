@@ -1,3 +1,26 @@
 {
-  "appTitle": "كتبي"
+  "@@locale": "ar",
+  "appTitle": "كتبي",
+  "loginTitle": "تسجيل الدخول",
+  "welcomeBack": "مرحباً بعودتك",
+  "email": "البريد الإلكتروني",
+  "error_empty_email": "البريد الإلكتروني مطلوب",
+  "error_invalid_email": "صيغة البريد الإلكتروني غير صحيحة.",
+  "password": "كلمة المرور",
+  "error_empty_password": "كلمة المرور مطلوبة",
+  "error_invalid_password": "اقل عدد مطلوب هو 6 احرف",
+  "btnLogin": "تسجيل الدخول",
+  "error_required_field": "هذا الحقل مطلوب",
+  "error_user_not_found": "لا يوجد حساب مرتبط بهذا البريد الإلكتروني.",
+  "error_wrong_password": "كلمة المرور غير صحيحة. حاول مرة أخرى.",
+  "error_user_disabled": "تم إيقاف هذا الحساب. يرجى التواصل مع الدعم.",
+  "error_too_many_requests": "تم إجراء محاولات كثيرة. يرجى المحاولة لاحقًا.",
+  "error_login_faild": "فشل تسجيل الدخول، حاول تاني.",
+  "error_invalid_credentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "error_no_internet": "لا يوجد اتصال بالإنترنت. تحقق من الشبكة.",
+  "error_operation_not_allowed": "طريقة تسجيل الدخول هذه غير مفعلة.",
+  "error_unknown": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
+  "success_login": "تم تسجيل الدخول بنجاح.",
+  "donotHaveAccount": "ليس لديك حساب؟ ",
+  "createAccount": "إنشاء حساب"
 }

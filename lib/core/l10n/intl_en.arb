@@ -1,3 +1,26 @@
 {
-  "appTitle": "Kutbi"
+  "@@locale": "en",
+  "appTitle": "Kutbi",
+  "loginTitle": "Login",
+  "welcomeBack": "Welcome back",
+  "email": "Email",
+  "error_empty_email": "Email is required",
+  "error_invalid_email": "The email address is not valid.",
+  "password": "Password",
+  "error_empty_password": "Password is required",
+  "error_invalid_password": "Min 6 characters",
+  "btnLogin": "Login",
+  "error_required_field": "This field is required",
+  "error_user_not_found": "No account found with this email.",
+  "error_wrong_password": "Incorrect password. Please try again.",
+  "error_user_disabled": "This account has been disabled. Please contact support.",
+  "error_too_many_requests": "Too many attempts. Please try again later.",
+  "error_login_faild": "Login failed.",
+  "error_invalid_credentials": "Invalid email or password.",
+  "error_no_internet": "No internet connection. Please check your network.",
+  "error_operation_not_allowed": "This sign-in method is not enabled.",
+  "error_unknown": "Something went wrong. Please try again.",
+  "success_login": "Logged in successfully.",
+  "donotHaveAccount": "Don't have an account? ",
+  "createAccount": "Create account"
 }
