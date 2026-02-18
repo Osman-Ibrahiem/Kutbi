@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/widgets/secondary_button.dart';
 
 import '../../../domain/models/book.dart';
@@ -59,7 +60,17 @@ class BooksListScreenBody extends ConsumerWidget {
       ),
       itemBuilder: (context, index) {
         final book = books[index];
-        return BookCard(book: book, onTap: () {});
+        return BookCard(
+          book: book,
+          onTap: () {
+            if (!context.mounted) return;
+            Navigator.pushNamed(
+              context,
+              AppRoutes.bookDetails,
+              arguments: book.id,
+            );
+          },
+        );
       },
     );
   }
