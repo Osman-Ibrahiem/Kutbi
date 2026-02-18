@@ -21,5 +21,6 @@
   "error_unknown": "Something went wrong. Please try again.",
   "success_login": "Logged in successfully.",
   "donotHaveAccount": "Don't have an account? ",
-  "createAccount": "Create account"
+  "createAccount": "Create account",
+  "appSubTitle": "A world of books"
 }

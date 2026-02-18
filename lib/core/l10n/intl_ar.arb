@@ -21,5 +21,6 @@
   "error_unknown": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
   "success_login": "تم تسجيل الدخول بنجاح.",
   "donotHaveAccount": "ليس لديك حساب؟ ",
-  "createAccount": "إنشاء حساب"
+  "createAccount": "إنشاء حساب",
+  "appSubTitle": "عالم من الكتب"
 }

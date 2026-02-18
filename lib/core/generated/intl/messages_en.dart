@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appSubTitle": MessageLookupByLibrary.simpleMessage("A world of books"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Kutbi"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
