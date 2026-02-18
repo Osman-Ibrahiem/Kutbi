@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
+import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/widgets/app_snackbar.dart';
 
 import '../controller/login_controller.dart';
@@ -23,6 +24,13 @@ class LoginScreen extends ConsumerWidget {
     if (state is Success) {
       debugPrint('User: ${state.user.toJson()}');
       AppSnackBar.showSuccess(context, S.of(context).success_login);
+      if (context.mounted) {
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          AppRoutes.booksList,
+          (route) => false,
+        );
+      }
     } else if (state is Failure) {
       AppSnackBar.showError(context, state.message);
     }
