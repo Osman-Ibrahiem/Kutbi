@@ -4,8 +4,7 @@ import 'package:kutbi/core/generated/assets.gen.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
-import 'package:kutbi/core/widgets/email_field.dart';
-import 'package:kutbi/core/widgets/password_field.dart';
+import 'package:kutbi/core/widgets/input_field.dart';
 import 'package:kutbi/core/widgets/primary_button.dart';
 import 'package:kutbi/core/widgets/secondary_button.dart';
 
@@ -54,14 +53,14 @@ class _LoginFormState extends ConsumerState<LoginForm> {
           ),
           const SizedBox(height: 24),
 
-          EmailField(
+          InputField.email(
             controller: _emailController,
             textInputAction: TextInputAction.next,
             enabled: !isLoading,
           ),
           const SizedBox(height: 12),
 
-          PasswordField(
+          InputField.password(
             controller: _passwordController,
             textInputAction: TextInputAction.done,
             enabled: !isLoading,
