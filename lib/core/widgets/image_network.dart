@@ -13,8 +13,8 @@ class ImageNetwork extends StatelessWidget {
       fit: fit,
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
-        return Center(
-          child: const SizedBox(
+        return const Center(
+          child: SizedBox(
             width: 22,
             height: 22,
             child: CircularProgressIndicator(strokeWidth: 2),
@@ -22,7 +22,8 @@ class ImageNetwork extends StatelessWidget {
         );
       },
       errorBuilder: (context, error, stackTrace) {
-        return Center(child: const Icon(Icons.image_not_supported_outlined));
+        debugPrint('IMG ERROR => $error');
+        return const Center(child: Icon(Icons.image_not_supported_outlined));
       },
     );
   }
