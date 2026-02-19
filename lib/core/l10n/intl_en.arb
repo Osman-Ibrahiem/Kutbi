@@ -39,5 +39,18 @@
   "price": "Price",
   "pages": "Pages",
   "bookmarks_removed": "Removed from bookmarks",
-  "bookmarks_added": "Added to bookmarks"
+  "bookmarks_added": "Added to bookmarks",
+  "booksStore": "Books Store",
+  "myBookmarks": "My Bookmarks",
+  "myAccount": "Account",
+  "settings": "Settings",
+  "btnLogout": "Logout",
+  "version": "Version {appVersion}",
+  "@version": {
+    "description": "App version label",
+    "placeholders": {
+      "appVersion": {}
+    }
+  },
+  "noBookmarks": "No bookmarks yet."
 }

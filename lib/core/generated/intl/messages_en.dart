@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(appVersion) => "Version ${appVersion}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appSubTitle": MessageLookupByLibrary.simpleMessage("A world of books"),
@@ -30,7 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "bookmarks_removed": MessageLookupByLibrary.simpleMessage(
       "Removed from bookmarks",
     ),
+    "booksStore": MessageLookupByLibrary.simpleMessage("Books Store"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
+    "btnLogout": MessageLookupByLibrary.simpleMessage("Logout"),
     "btnRegister": MessageLookupByLibrary.simpleMessage("Register"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
@@ -89,7 +93,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Incorrect password. Please try again.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
+    "myAccount": MessageLookupByLibrary.simpleMessage("Account"),
+    "myBookmarks": MessageLookupByLibrary.simpleMessage("My Bookmarks"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "noBookmarks": MessageLookupByLibrary.simpleMessage("No bookmarks yet."),
     "pages": MessageLookupByLibrary.simpleMessage("Pages"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
@@ -97,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "registerTitle": MessageLookupByLibrary.simpleMessage(
       "Register new account",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "showLess": MessageLookupByLibrary.simpleMessage("Show Less"),
     "showMore": MessageLookupByLibrary.simpleMessage("Show More"),
     "success_login": MessageLookupByLibrary.simpleMessage(
@@ -105,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "success_register": MessageLookupByLibrary.simpleMessage(
       "Registered successfully.",
     ),
+    "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };
 }
