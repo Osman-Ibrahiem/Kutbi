@@ -37,5 +37,7 @@
   "showMore": "Show More",
   "publicationYear": "Publication year",
   "price": "Price",
-  "pages": "Pages"
+  "pages": "Pages",
+  "bookmarks_removed": "Removed from bookmarks",
+  "bookmarks_added": "Added to bookmarks"
 }

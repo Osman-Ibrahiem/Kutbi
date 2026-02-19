@@ -37,5 +37,7 @@
   "showMore": "اقرأ المزيد",
   "publicationYear": "سنة النشر",
   "price": "السعر",
-  "pages": "الصفحات"
+  "pages": "الصفحات",
+  "bookmarks_removed": "تم الحذف من المفضلة",
+  "bookmarks_added": "تم الإضافة الى المفضلة"
 }
