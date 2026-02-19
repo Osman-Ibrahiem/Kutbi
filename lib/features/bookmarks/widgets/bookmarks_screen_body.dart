@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/routing/app_routes.dart';
 
 import '../../../domain/models/book.dart';
@@ -14,7 +15,7 @@ class BookmarksScreenBody extends ConsumerWidget {
     final bookmarks = ref.watch(bookmarksControllerProvider);
 
     return bookmarks.isEmpty
-        ? const Center(child: Text("No bookmarks yet."))
+        ? Center(child: Text(S.of(context).noBookmarks))
         : _buildBooksList(context, books: bookmarks);
   }
 

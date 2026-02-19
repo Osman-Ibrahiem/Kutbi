@@ -3,6 +3,7 @@ import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
 
 import '../widgets/books_list_screen_body.dart';
+import '../widgets/main_drawer.dart';
 
 class BooksListScreen extends StatelessWidget {
   const BooksListScreen({super.key});
@@ -31,6 +32,7 @@ class BooksListScreen extends StatelessWidget {
         ),
         centerTitle: false,
       ),
+      drawer: const MainDrawer(),
       body: const BooksListScreenBody(),
     );
   }

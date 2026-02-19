@@ -39,5 +39,18 @@
   "price": "السعر",
   "pages": "الصفحات",
   "bookmarks_removed": "تم الحذف من المفضلة",
-  "bookmarks_added": "تم الإضافة الى المفضلة"
+  "bookmarks_added": "تم الإضافة الى المفضلة",
+  "booksStore": "متجر الكتب",
+  "myBookmarks": "مفضلاتي",
+  "myAccount": "حسابي",
+  "settings": "الإعدادات",
+  "btnLogout": "تسجيل خروج",
+  "version": "اصدار {appVersion}",
+  "@version": {
+    "description": "App version label",
+    "placeholders": {
+      "appVersion": {}
+    }
+  },
+  "noBookmarks": "لا يوجد عناصر في المفضلة."
 }
