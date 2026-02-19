@@ -338,6 +338,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Show Less`
+  String get showLess {
+    return Intl.message('Show Less', name: 'showLess', desc: '', args: []);
+  }
+
+  /// `Show More`
+  String get showMore {
+    return Intl.message('Show More', name: 'showMore', desc: '', args: []);
+  }
+
+  /// `Publication year`
+  String get publicationYear {
+    return Intl.message(
+      'Publication year',
+      name: 'publicationYear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
+  }
+
+  /// `Pages`
+  String get pages {
+    return Intl.message('Pages', name: 'pages', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

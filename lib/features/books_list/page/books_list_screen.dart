@@ -29,8 +29,7 @@ class BooksListScreen extends StatelessWidget {
             ),
           ],
         ),
-      )
-      ,
+      ),
       body: const BooksListScreenBody(),
     );
   }

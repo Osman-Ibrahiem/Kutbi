@@ -31,5 +31,11 @@
   "confirmPassword": "Confirm Password",
   "btnRegister": "Register",
   "success_register": "Registered successfully.",
-  "appSubTitle": "A world of books"
+  "appSubTitle": "A world of books",
+  "description": "Description",
+  "showLess": "Show Less",
+  "showMore": "Show More",
+  "publicationYear": "Publication year",
+  "price": "Price",
+  "pages": "Pages"
 }
