@@ -32,6 +32,19 @@ class BooksRepositoryImpl implements BooksRepository {
       }
     }
   }
+
+  @override
+  Future<Book> getBookDetails(String isbn) async {
+    try {
+      final remoteBook = await remoteDataSource.getBookDetails(isbn);
+      final book = remoteBook.toBook();
+      return book;
+    } catch (e) {
+      if (e is OfflineException) rethrow;
+      if (e is ServerException) rethrow;
+      throw ServerException("Unexpected Error: $e");
+    }
+  }
 }
 
 final booksRepositoryProvider = Provider<BooksRepository>((ref) {

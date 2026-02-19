@@ -29,6 +29,16 @@ class BooksRemoteDataSource {
       throw DataParsingException("Failed to parse books response: $e");
     }
   }
+
+  Future<BookModel> getBookDetails(String isbn) async {
+    final response = await apiService.get(endpoint: '/books/$isbn');
+
+    try {
+      return BookModel.fromJson(response);
+    } catch (e) {
+      throw DataParsingException("Failed to parse book details: $e");
+    }
+  }
 }
 
 final booksRemoteDataSourceProvider = Provider<BooksRemoteDataSource>(
