@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
+import 'package:kutbi/features/books_list/controller/package_info_provider.dart';
 
 import '../controller/user_controller.dart';
 
@@ -110,9 +111,21 @@ class MainDrawer extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(
-              S.of(context).version("1.0.0"),
-              style: TextStyle(color: AppColors.grey),
+            child: Consumer(
+              builder: (context, ref, child) {
+                final state = ref.watch(packageInfoProvider);
+                if (state.hasValue && state.value != null) {
+                  final packageInfo = state.value!;
+                  return Text(
+                    S.of(context).version(packageInfo.version),
+                    style: TextStyle(color: AppColors.grey),
+                  );
+                }
+                return Text(
+                  S.of(context).version("1.0.0"),
+                  style: TextStyle(color: AppColors.grey),
+                );
+              },
             ),
           ),
           SizedBox(height: MediaQuery.of(context).padding.bottom),
