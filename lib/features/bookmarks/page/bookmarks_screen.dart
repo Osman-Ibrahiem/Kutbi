@@ -12,8 +12,8 @@ class BookmarksScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          S.of(context).appTitle,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          S.of(context).myBookmarks,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
             color: AppColors.primary,
             fontWeight: FontWeight.bold,
           ),

@@ -42,6 +42,17 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<bool> isLoggedIn() {
     return localDataSource.isLoggedIn();
   }
+
+  @override
+  Future<UserModel?> getCurrentUser() async {
+    return localDataSource.getUser();
+  }
+
+  @override
+  Future<void> logout() async {
+    await remoteDataSource.logout();
+    await localDataSource.removeUser();
+  }
 }
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {

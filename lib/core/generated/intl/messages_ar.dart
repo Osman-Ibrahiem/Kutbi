@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(appVersion) => "اصدار ${appVersion}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appSubTitle": MessageLookupByLibrary.simpleMessage("عالم من الكتب"),
@@ -30,7 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "bookmarks_removed": MessageLookupByLibrary.simpleMessage(
       "تم الحذف من المفضلة",
     ),
+    "booksStore": MessageLookupByLibrary.simpleMessage("متجر الكتب"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "btnLogout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
     "btnRegister": MessageLookupByLibrary.simpleMessage("تسجيل"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
@@ -89,12 +93,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور غير صحيحة. حاول مرة أخرى.",
     ),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "myBookmarks": MessageLookupByLibrary.simpleMessage("مفضلاتي"),
     "name": MessageLookupByLibrary.simpleMessage("الإسم"),
+    "noBookmarks": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد عناصر في المفضلة.",
+    ),
     "pages": MessageLookupByLibrary.simpleMessage("الصفحات"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "publicationYear": MessageLookupByLibrary.simpleMessage("سنة النشر"),
     "registerTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "showLess": MessageLookupByLibrary.simpleMessage("عرض أقل"),
     "showMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
     "success_login": MessageLookupByLibrary.simpleMessage(
@@ -103,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "success_register": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح.",
     ),
+    "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };
 }

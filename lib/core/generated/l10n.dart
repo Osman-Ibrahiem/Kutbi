@@ -393,6 +393,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Books Store`
+  String get booksStore {
+    return Intl.message('Books Store', name: 'booksStore', desc: '', args: []);
+  }
+
+  /// `My Bookmarks`
+  String get myBookmarks {
+    return Intl.message(
+      'My Bookmarks',
+      name: 'myBookmarks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get myAccount {
+    return Intl.message('Account', name: 'myAccount', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get btnLogout {
+    return Intl.message('Logout', name: 'btnLogout', desc: '', args: []);
+  }
+
+  /// `Version {appVersion}`
+  String version(Object appVersion) {
+    return Intl.message(
+      'Version $appVersion',
+      name: 'version',
+      desc: 'App version label',
+      args: [appVersion],
+    );
+  }
+
+  /// `No bookmarks yet.`
+  String get noBookmarks {
+    return Intl.message(
+      'No bookmarks yet.',
+      name: 'noBookmarks',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

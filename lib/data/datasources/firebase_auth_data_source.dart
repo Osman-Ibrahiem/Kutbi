@@ -74,6 +74,11 @@ class FirebaseAuthDataSource implements AuthRemoteDataSource {
     }
   }
 
+  @override
+  Future<void> logout() async {
+    await _auth.signOut();
+  }
+
   String _mapFirebaseError(String code) {
     switch (code) {
       case 'user-not-found':

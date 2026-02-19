@@ -12,6 +12,8 @@ abstract class AuthRemoteDataSource {
     required String email,
     required String password,
   });
+
+  Future<void> logout();
 }
 
 final firebaseAuthProvider = Provider<FirebaseAuth>(
