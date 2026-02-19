@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kutbi/features/book_details/page/book_details_screen.dart';
+import 'package:kutbi/features/bookmarks/page/bookmarks_screen.dart';
 import 'package:kutbi/features/books_list/page/books_list_screen.dart';
 import 'package:kutbi/features/login/page/login_screen.dart';
 import 'package:kutbi/features/register/page/register_screen.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static const register = '/register';
   static const booksList = '/books';
   static const bookDetails = '/book-details';
+  static const bookmarks = '/bookmarks';
 
   static final Map<String, WidgetBuilder> routes = {
     splash: (_) => const SplashScreen(),
@@ -20,5 +22,6 @@ class AppRoutes {
     register: (_) => const RegisterScreen(),
     booksList: (_) => const BooksListScreen(),
     bookDetails: (_) => const BookDetailsScreen(),
+    bookmarks: (_) => const BookmarksScreen(),
   };
 }

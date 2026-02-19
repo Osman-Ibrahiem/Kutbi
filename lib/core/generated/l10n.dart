@@ -373,6 +373,26 @@ class S {
   String get pages {
     return Intl.message('Pages', name: 'pages', desc: '', args: []);
   }
+
+  /// `Removed from bookmarks`
+  String get bookmarks_removed {
+    return Intl.message(
+      'Removed from bookmarks',
+      name: 'bookmarks_removed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added to bookmarks`
+  String get bookmarks_added {
+    return Intl.message(
+      'Added to bookmarks',
+      name: 'bookmarks_added',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

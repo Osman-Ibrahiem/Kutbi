@@ -17,20 +17,20 @@ class BookModel {
   final Map<String, String>? pdf;
 
   BookModel({
-    required this.title,
-    required this.subtitle,
-    required this.isbn10,
-    required this.isbn13,
-    required this.authors,
-    required this.publisher,
-    required this.pages,
-    required this.year,
-    required this.rating,
-    required this.desc,
-    required this.price,
-    required this.image,
-    required this.url,
-    required this.pdf,
+    this.title,
+    this.subtitle,
+    this.isbn10,
+    this.isbn13,
+    this.authors,
+    this.publisher,
+    this.pages,
+    this.year,
+    this.rating,
+    this.desc,
+    this.price,
+    this.image,
+    this.url,
+    this.pdf,
   });
 
   factory BookModel.fromJson(Map<String, dynamic> json) {
@@ -69,6 +69,24 @@ class BookModel {
       'url': url,
       'pdf': pdf,
     };
+  }
+
+  factory BookModel.fromBook(Book book) {
+    return BookModel(
+      isbn13: book.id,
+      title: book.title,
+      subtitle: book.subTitle,
+      authors: book.authors,
+      publisher: book.publisher,
+      pages: book.pages,
+      year: book.year,
+      rating: book.rating,
+      desc: book.desc,
+      price: book.price,
+      image: book.imageUrl,
+      url: book.url,
+      pdf: book.pdf,
+    );
   }
 
   Book toBook() {
