@@ -29,6 +29,10 @@ class AuthDataSource {
       password: password,
     );
   }
+
+  Future<void> logout() async {
+    await _service.signOut();
+  }
 }
 
 final authDataSourceProvider = Provider<AuthDataSource>(
