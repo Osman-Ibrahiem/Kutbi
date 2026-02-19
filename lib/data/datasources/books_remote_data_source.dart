@@ -1,46 +1,43 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/errors/exceptions.dart';
-import '../../core/network/api_service.dart';
+import '../../core/utils/api_exception.dart';
 import '../models/book_model.dart';
 import '../models/books_response.dart';
+import '../services/remote/api/api_client.dart';
+import '../services/remote/api/http_client.dart';
 
 class BooksRemoteDataSource {
-  final ApiService apiService;
+  final ApiClient _apiClient;
 
-  BooksRemoteDataSource({required this.apiService});
+  BooksRemoteDataSource(this._apiClient);
 
   Future<List<BookModel>> fetchNewBooks() async {
-    final response = await apiService.get(endpoint: 'new');
+    final response = await _apiClient.get(endpoint: 'new');
 
     try {
       final booksResponse = BooksResponse.fromJson(response);
 
       if (booksResponse.error != "0") {
-        throw ServerException("API Error: ${booksResponse.error}");
-      }
-
-      if (booksResponse.books == null || booksResponse.books!.isEmpty) {
-        throw EmptyDataException();
+        throw ServerException(message: "API Error: ${booksResponse.error}");
       }
 
       return booksResponse.books ?? [];
     } catch (e) {
-      throw DataParsingException("Failed to parse books response: $e");
+      throw DataParsingException(message: "Failed to parse books response: $e");
     }
   }
 
   Future<BookModel> getBookDetails(String isbn) async {
-    final response = await apiService.get(endpoint: '/books/$isbn');
+    final response = await _apiClient.get(endpoint: '/books/$isbn');
 
     try {
       return BookModel.fromJson(response);
     } catch (e) {
-      throw DataParsingException("Failed to parse book details: $e");
+      throw DataParsingException(message: "Failed to parse book details: $e");
     }
   }
 }
 
 final booksRemoteDataSourceProvider = Provider<BooksRemoteDataSource>(
-  (ref) => BooksRemoteDataSource(apiService: ref.read(apiServiceProvider)),
+  (ref) => BooksRemoteDataSource(ref.read(apiClientProvider)),
 );

@@ -1,52 +1,44 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/utils/app_exception.dart';
+import 'package:kutbi/core/utils/api_exception.dart';
+import 'package:kutbi/core/utils/logger.dart';
 
-import '../../domain/models/user_model.dart';
-import 'auth_remote_data_source.dart';
+import '../../../../domain/models/user_model.dart';
+import 'auth_service.dart';
 
-class FirebaseAuthDataSource implements AuthRemoteDataSource {
+class FirebaseAuthService implements AuthService {
   final FirebaseAuth _auth;
 
-  FirebaseAuthDataSource({FirebaseAuth? auth})
-    : _auth = auth ?? FirebaseAuth.instance;
+  FirebaseAuthService(this._auth);
 
   @override
-  Future<UserModel> login({
+  Future<UserModel> signIn({
     required String email,
     required String password,
   }) async {
     try {
-      await _auth.signOut();
       final credential = await _auth.signInWithEmailAndPassword(
-        email: email.trim(),
+        email: email,
         password: password,
       );
       final user = credential.user;
-      return UserModel(
-        id: user?.uid,
-        name: user?.displayName,
-        email: user?.email,
-        photoUrl: user?.photoURL,
-        token: await user?.getIdToken(),
-      );
+      return _mapFirebaseUserToUserModel(user!);
     } on FirebaseAuthException catch (e) {
-      debugPrint('FirebaseAuthException code: ${e.code}');
-      throw AppException(_mapFirebaseError(e.code));
+      logError('FirebaseAuthException code: ${e.code}');
+      throw ApiException(message: _mapFirebaseError(e.code));
     } catch (_) {
-      throw AppException(S.current.error_unknown);
+      throw ApiException(message: S.current.error_unknown);
     }
   }
 
   @override
-  Future<UserModel> register({
-    required String name,
+  Future<UserModel> signUp({
+    required String displayName,
     required String email,
     required String password,
   }) async {
     try {
-      await _auth.signOut();
       final credential = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
@@ -55,23 +47,38 @@ class FirebaseAuthDataSource implements AuthRemoteDataSource {
       final user = credential.user;
 
       if (user != null) {
-        await user.updateDisplayName(name);
+        await user.updateDisplayName(displayName);
         await user.reload();
       }
 
-      return UserModel(
-        id: user?.uid,
-        name: user?.displayName,
-        email: user?.email,
-        photoUrl: user?.photoURL,
-        token: await user?.getIdToken(),
-      );
+      return _mapFirebaseUserToUserModel(user!);
     } on FirebaseAuthException catch (e) {
-      debugPrint('FirebaseAuthException code: ${e.code}');
-      throw AppException(_mapFirebaseError(e.code));
+      logError('FirebaseAuthException code: ${e.code}');
+      throw ApiException(message: _mapFirebaseError(e.code));
     } catch (_) {
-      throw AppException(S.current.error_unknown);
+      throw ApiException(message: S.current.error_unknown);
     }
+  }
+
+  UserModel _mapFirebaseUserToUserModel(User user) {
+    return UserModel(
+      id: user.uid,
+      email: user.email,
+      name: user.displayName,
+      photoUrl: user.photoURL,
+    );
+  }
+
+  @override
+  Future<void> signOut() async {
+    return await _auth.signOut();
+  }
+
+  @override
+  Stream<UserModel?> authStateChanges() {
+    return _auth.authStateChanges().map((user) {
+      return user != null ? _mapFirebaseUserToUserModel(user) : null;
+    });
   }
 
   String _mapFirebaseError(String code) {
@@ -99,3 +106,11 @@ class FirebaseAuthDataSource implements AuthRemoteDataSource {
     }
   }
 }
+
+final firebaseAuthProvider = Provider<FirebaseAuth>(
+  (ref) => FirebaseAuth.instance,
+);
+
+final authServiceProvider = Provider<AuthService>(
+  (ref) => FirebaseAuthService(ref.read(firebaseAuthProvider)),
+);
