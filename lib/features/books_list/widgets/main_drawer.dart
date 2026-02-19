@@ -4,27 +4,42 @@ import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
 
-class MainDrawer extends ConsumerWidget {
+import '../controller/user_controller.dart';
+
+class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Drawer(
       child: Column(
         children: [
-          UserAccountsDrawerHeader(
-            decoration: const BoxDecoration(
-              gradient: AppColors.primaryGradient,
-            ),
-            accountName: const Text(
-              "Osman Ibrahiem",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            accountEmail: const Text("osman@example.com"),
-            currentAccountPicture: const CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Icon(Icons.person, size: 40, color: AppColors.primary),
-            ),
+          Consumer(
+            builder: (context, ref, child) {
+              final state = ref.watch(userControllerProvider);
+              if (state.hasValue && state.value != null) {
+                final user = state.value!;
+                return UserAccountsDrawerHeader(
+                  decoration: const BoxDecoration(
+                    gradient: AppColors.primaryGradient,
+                  ),
+                  accountName: Text(
+                    user.name ?? '',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  accountEmail: Text(user.email ?? ''),
+                  currentAccountPicture: const CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.person,
+                      size: 40,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                );
+              }
+              return const SizedBox();
+            },
           ),
 
           ListTile(
@@ -67,18 +82,27 @@ class MainDrawer extends ConsumerWidget {
 
           const Divider(),
 
-          ListTile(
-            leading: const Icon(Icons.logout, color: AppColors.red),
-            title: Text(
-              S.of(context).btnLogout,
-              style: TextStyle(color: AppColors.red),
-            ),
-            onTap: () {
-              Navigator.pop(context);
+          Consumer(
+            builder: (context, ref, child) {
+              final state = ref.watch(userControllerProvider);
+              if (state.hasValue && state.value != null) {
+                return ListTile(
+                  leading: const Icon(Icons.logout, color: AppColors.red),
+                  title: Text(
+                    S.of(context).btnLogout,
+                    style: TextStyle(color: AppColors.red),
+                  ),
+                  onTap: () async {
+                    Navigator.pop(context);
 
-              // ref.read(authNotifierProvider.notifier).logout();
+                    await ref.read(userControllerProvider.notifier).logout();
 
-              Navigator.pushReplacementNamed(context, AppRoutes.login);
+                    if (!context.mounted) return;
+                    Navigator.pushReplacementNamed(context, AppRoutes.login);
+                  },
+                );
+              }
+              return const SizedBox();
             },
           ),
 
