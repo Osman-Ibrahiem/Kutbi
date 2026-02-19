@@ -13,6 +13,8 @@ class LocalDataSource {
 
   static const String userKey = "user";
   static const String isLoggedInKey = "is_logged_in";
+  static const String themeModeKey = "theme_mode";
+  static const String localeKey = "locale";
 
   Future<void> cacheUser(UserModel user) async {
     String userJson = jsonEncode(user.toJson());
@@ -20,8 +22,8 @@ class LocalDataSource {
     await _localConfiguration.setBool(isLoggedInKey, true);
   }
 
-  Future<UserModel?> getUser() async {
-    String? userString = await _localConfiguration.getString(userKey);
+  UserModel? getUser() {
+    String? userString = _localConfiguration.getString(userKey);
 
     if (userString != null) {
       return UserModel.fromJson(jsonDecode(userString));
@@ -29,8 +31,8 @@ class LocalDataSource {
     return null;
   }
 
-  Future<bool> isLoggedIn() async {
-    bool? isLoggedIn = await _localConfiguration.getBool(isLoggedInKey);
+  bool isLoggedIn() {
+    bool? isLoggedIn = _localConfiguration.getBool(isLoggedInKey);
 
     if (isLoggedIn != null) {
       return isLoggedIn;
@@ -41,6 +43,30 @@ class LocalDataSource {
   Future<void> removeUser() async {
     await _localConfiguration.remove(userKey);
     await _localConfiguration.remove(isLoggedInKey);
+  }
+
+  String? getThemeMode() {
+    return _localConfiguration.getString(themeModeKey);
+  }
+
+  Future<void> setThemeMode(String? themeMode) async {
+    if (themeMode == null || themeMode.isEmpty) {
+      await _localConfiguration.remove(localeKey);
+      return;
+    }
+    await _localConfiguration.setString(themeModeKey, themeMode);
+  }
+
+  String? getLocale() {
+    return _localConfiguration.getString(localeKey);
+  }
+
+  Future<void> setLocale(String? locale) async {
+    if (locale == null || locale.isEmpty) {
+      await _localConfiguration.remove(localeKey);
+      return;
+    }
+    await _localConfiguration.setString(localeKey, locale);
   }
 }
 

@@ -8,7 +8,7 @@ class IsLoggedInUseCase {
 
   IsLoggedInUseCase(this.repository);
 
-  Future<bool> call() {
+  bool call() {
     return repository.isLoggedIn();
   }
 }

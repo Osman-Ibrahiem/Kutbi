@@ -20,7 +20,7 @@ class SplashController extends Notifier<SplashState> {
 
     await Future.delayed(const Duration(milliseconds: 2500));
 
-    final isLoggedIn = await _usecase();
+    final isLoggedIn = _usecase();
     if (isLoggedIn) {
       state = Authenticated();
     } else {

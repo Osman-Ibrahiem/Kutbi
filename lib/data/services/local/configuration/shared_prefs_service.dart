@@ -14,7 +14,7 @@ class SharedPrefsService implements LocalConfiguration {
   }
 
   @override
-  Future<String?> getString(String key) async {
+  String? getString(String key) {
     return _prefs.getString(key);
   }
 
@@ -24,7 +24,7 @@ class SharedPrefsService implements LocalConfiguration {
   }
 
   @override
-  Future<bool?> getBool(String key) async {
+  bool? getBool(String key) {
     return _prefs.getBool(key);
   }
 

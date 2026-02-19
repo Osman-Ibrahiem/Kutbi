@@ -39,12 +39,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<bool> isLoggedIn() {
+  bool isLoggedIn() {
     return localDataSource.isLoggedIn();
   }
 
   @override
-  Future<UserModel?> getCurrentUser() async {
+  UserModel? getCurrentUser() {
     return localDataSource.getUser();
   }
 

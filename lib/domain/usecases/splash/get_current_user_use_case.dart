@@ -9,7 +9,7 @@ class GetCurrentUserUseCase {
 
   GetCurrentUserUseCase(this.repository);
 
-  Future<UserModel?> call() {
+  UserModel? call() {
     return repository.getCurrentUser();
   }
 }
