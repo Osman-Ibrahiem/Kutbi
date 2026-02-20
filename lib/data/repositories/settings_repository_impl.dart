@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../domain/models/app_locale.dart';
+import '../../domain/models/app_theme_mode.dart';
 import '../../domain/repositories/settings_repository.dart';
 import '../datasources/local_data_source.dart';
 
@@ -10,52 +11,25 @@ class SettingsRepositoryImpl implements SettingsRepository {
   const SettingsRepositoryImpl(this.localDataSource);
 
   @override
-  ThemeMode getThemeMode() {
+  AppThemeMode getCurrentThemeMode() {
     final themeMode = localDataSource.getThemeMode();
-    if (themeMode == null || themeMode.isEmpty) {
-      return ThemeMode.system;
-    }
-    switch (themeMode) {
-      case 'light':
-        return ThemeMode.light;
-      case 'dark':
-        return ThemeMode.dark;
-      default:
-        return ThemeMode.system;
-    }
+    return AppThemeMode.fromValue(themeMode);
   }
 
   @override
-  Future<void> setThemeMode(ThemeMode themeMode) async {
-    switch (themeMode) {
-      case ThemeMode.light:
-        await localDataSource.setThemeMode('light');
-        break;
-      case ThemeMode.dark:
-        await localDataSource.setThemeMode('dark');
-        break;
-      case ThemeMode.system:
-        await localDataSource.setThemeMode(null);
-        break;
-    }
+  Future<void> setCurrentThemeMode(AppThemeMode theme) async {
+    await localDataSource.setThemeMode(theme.toValue());
   }
 
   @override
-  Locale? getLocale() {
-    final localeString = localDataSource.getLocale();
-    if (localeString == null || localeString.isEmpty) {
-      return null;
-    }
-    return Locale(localeString);
+  AppLocale getCurrentLocale() {
+    final locale = localDataSource.getLocale();
+    return AppLocale.fromValue(locale);
   }
 
   @override
-  Future<void> setLocale(Locale? locale) async {
-    if (locale == null) {
-      await localDataSource.setLocale(null);
-    } else {
-      await localDataSource.setLocale(locale.languageCode);
-    }
+  Future<void> setCurrentLocale(AppLocale locale) async {
+    await localDataSource.setLocale(locale.toValue());
   }
 }
 

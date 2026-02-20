@@ -4,6 +4,7 @@ import 'package:kutbi/features/bookmarks/page/bookmarks_screen.dart';
 import 'package:kutbi/features/books_list/page/books_list_screen.dart';
 import 'package:kutbi/features/login/page/login_screen.dart';
 import 'package:kutbi/features/register/page/register_screen.dart';
+import 'package:kutbi/features/settings/page/settings_screen.dart';
 import 'package:kutbi/features/splash/page/splash_screen.dart';
 
 class AppRoutes {
@@ -15,6 +16,7 @@ class AppRoutes {
   static const booksList = '/books';
   static const bookDetails = '/book-details';
   static const bookmarks = '/bookmarks';
+  static const settings = '/settings';
 
   static final Map<String, WidgetBuilder> routes = {
     splash: (_) => const SplashScreen(),
@@ -23,5 +25,6 @@ class AppRoutes {
     booksList: (_) => const BooksListScreen(),
     bookDetails: (_) => const BookDetailsScreen(),
     bookmarks: (_) => const BookmarksScreen(),
+    settings: (_) => const SettingsScreen(),
   };
 }

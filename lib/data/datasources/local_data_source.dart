@@ -51,7 +51,7 @@ class LocalDataSource {
 
   Future<void> setThemeMode(String? themeMode) async {
     if (themeMode == null || themeMode.isEmpty) {
-      await _localConfiguration.remove(localeKey);
+      await _localConfiguration.remove(themeModeKey);
       return;
     }
     await _localConfiguration.setString(themeModeKey, themeMode);

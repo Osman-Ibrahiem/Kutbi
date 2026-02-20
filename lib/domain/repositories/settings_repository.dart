@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
+import '../models/app_locale.dart';
+import '../models/app_theme_mode.dart';
 
 abstract class SettingsRepository {
-  ThemeMode getThemeMode();
+  AppThemeMode getCurrentThemeMode();
 
-  Future<void> setThemeMode(ThemeMode themeMode);
+  Future<void> setCurrentThemeMode(AppThemeMode theme);
 
-  Locale? getLocale();
+  AppLocale getCurrentLocale();
 
-  Future<void> setLocale(Locale? locale);
+  Future<void> setCurrentLocale(AppLocale locale);
 }

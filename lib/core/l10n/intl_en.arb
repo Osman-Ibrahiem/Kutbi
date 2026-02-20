@@ -52,5 +52,12 @@
       "appVersion": {}
     }
   },
-  "noBookmarks": "No bookmarks yet."
+  "noBookmarks": "No bookmarks yet.",
+  "appearance": "Appearance",
+  "systemDefault": "System Default",
+  "light": "Light",
+  "dark": "Dark",
+  "language": "Language",
+  "english": "English",
+  "arabic": "العربية"
 }

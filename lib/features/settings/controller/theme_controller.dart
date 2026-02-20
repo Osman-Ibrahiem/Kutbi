@@ -1,26 +1,28 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../domain/usecases/settings/get_theme_mode_use_case.dart';
-import '../../../domain/usecases/settings/set_theme_mode_use_case.dart';
+import '../../../domain/models/app_theme_mode.dart';
+import '../../../domain/usecases/settings/get_current_theme_mode_use_case.dart';
+import '../../../domain/usecases/settings/set_current_theme_mode_use_case.dart';
 
-class ThemeController extends Notifier<ThemeMode> {
-  late final GetThemeModeUseCase _getThemeModeUseCase;
-  late final SetThemeModeUseCase _setThemeModeUseCase;
+class ThemeController extends Notifier<AppThemeMode> {
+  late final GetCurrentThemeModeUseCase _getCurrentThemeModeUseCase;
+  late final SetCurrentThemeModeUseCase _setCurrentThemeModeUseCase;
 
   @override
-  ThemeMode build() {
-    _getThemeModeUseCase = ref.read(getThemeModeUseCaseProvider);
-    _setThemeModeUseCase = ref.read(setThemeModeUseCaseProvider);
-    return _getThemeModeUseCase();
+  AppThemeMode build() {
+    _getCurrentThemeModeUseCase = ref.read(getCurrentThemeModeUseCaseProvider);
+    _setCurrentThemeModeUseCase = ref.read(setCurrentThemeModeUseCaseProvider);
+    return _getCurrentThemeModeUseCase();
   }
 
-  void changeTheme(ThemeMode themeMode) {
-    _setThemeModeUseCase(themeMode);
-    state = _getThemeModeUseCase();
+  void changeTheme(AppThemeMode themeMode) {
+    _setCurrentThemeModeUseCase(themeMode);
+    state = _getCurrentThemeModeUseCase();
   }
+
+  AppThemeMode get currentThemeMode => state;
 }
 
-final themeControllerProvider = NotifierProvider<ThemeController, ThemeMode>(
+final themeControllerProvider = NotifierProvider<ThemeController, AppThemeMode>(
   ThemeController.new,
 );
