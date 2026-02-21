@@ -67,7 +67,7 @@ class MainDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
 
-              // Navigator.pushNamed(context, AppRoutes.account);
+              Navigator.pushNamed(context, AppRoutes.profile);
             },
           ),
 
