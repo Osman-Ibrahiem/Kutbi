@@ -22,6 +22,8 @@ class BooksRemoteDataSource {
       }
 
       return booksResponse.books ?? [];
+    } on ApiException {
+      rethrow;
     } catch (e) {
       throw DataParsingException(message: "Failed to parse books response: $e");
     }
