@@ -11,7 +11,7 @@ abstract class AuthRepository {
 
   bool isLoggedIn();
 
-  UserModel? getCurrentUser();
+  UserModel getCurrentUser();
 
   Future<UserModel> updateProfile({String? name, String? photoUrl});
 

@@ -60,15 +60,6 @@ class FirebaseAuthService implements AuthService {
     }
   }
 
-  UserModel _mapFirebaseUserToUserModel(User user) {
-    return UserModel(
-      id: user.uid,
-      email: user.email,
-      name: user.displayName,
-      photoUrl: user.photoURL,
-    );
-  }
-
   @override
   Future<void> signOut() async {
     return await _auth.signOut();
@@ -82,15 +73,10 @@ class FirebaseAuthService implements AuthService {
   }
 
   @override
-  Future<UserModel> fetchProfile() async {
+  UserModel? get currentUser {
     final user = _auth.currentUser;
-    return UserModel(
-      id: user?.uid,
-      name: user?.displayName,
-      email: user?.email,
-      photoUrl: user?.photoURL,
-      token: await user?.getIdToken(),
-    );
+    if (user == null) return null;
+    return _mapFirebaseUserToUserModel(user);
   }
 
   @override
@@ -109,6 +95,15 @@ class FirebaseAuthService implements AuthService {
     if (currentUser == null) throw Exception("No user logged in");
 
     await currentUser.delete();
+  }
+
+  UserModel _mapFirebaseUserToUserModel(User user) {
+    return UserModel(
+      id: user.uid,
+      email: user.email,
+      name: user.displayName,
+      photoUrl: user.photoURL,
+    );
   }
 
   String _mapFirebaseError(String code) {

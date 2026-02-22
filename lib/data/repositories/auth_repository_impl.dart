@@ -48,7 +48,8 @@ class AuthRepositoryImpl implements AuthRepository {
     final cachedUser = localDataSource.getUser();
     if (cachedUser != null) return cachedUser;
 
-    final user = remoteDataSource.fetchProfile();
+    final user = authDataSource.currentUser;
+    if (user == null) throw Exception("No user logged in");
     localDataSource.cacheUser(user);
 
     return user;
@@ -56,11 +57,11 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<UserModel> updateProfile({String? name, String? photoUrl}) async {
-    await remoteDataSource.updateProfile(name: name, photoUrl: photoUrl);
+    await authDataSource.updateProfile(name: name, photoUrl: photoUrl);
 
-    final currentUser = await localDataSource.getUser();
+    final currentUser = getCurrentUser();
     final updatedUser = UserModel(
-      id: currentUser!.id,
+      id: currentUser.id,
       name: name ?? currentUser.name,
       email: currentUser.email,
       token: currentUser.token,
@@ -79,7 +80,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<void> deleteAccount() async {
-    await remoteDataSource.deleteAccount();
+    await authDataSource.deleteAccount();
     await localDataSource.removeUser();
   }
 }
