@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/repositories/auth_repository_impl.dart';
-import '../../models/user_model.dart';
 import '../../repositories/auth_repository.dart';
 
 class LogoutUseCase {
