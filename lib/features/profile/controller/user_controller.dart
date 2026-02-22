@@ -34,12 +34,10 @@ class UserController extends AsyncNotifier<UserModel> {
 
     ref.onDispose(() => _eventController.close());
 
-    return await getCurrentUserUseCase();
+    return getCurrentUserUseCase();
   }
 
-  Future<bool> isLoggedIn() async {
-    return await isLoggedInUseCase();
-  }
+  bool isLoggedIn() => isLoggedInUseCase();
 
   Future<void> updateUser({String? newName, String? photoUrl}) async {
     final currentUser = state.value;
@@ -65,8 +63,13 @@ class UserController extends AsyncNotifier<UserModel> {
     );
   }
 
-  Future<void> logout() async {
-    await logoutUseCase();
+  Future<bool> logout() async {
+    try {
+      await logoutUseCase();
+      return true;
+    } catch (e, st) {
+      return false;
+    }
   }
 
   Future<void> deleteAccount() async {

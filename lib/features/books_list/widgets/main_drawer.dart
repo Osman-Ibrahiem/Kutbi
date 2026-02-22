@@ -17,9 +17,12 @@ class MainDrawer extends StatelessWidget {
         children: [
           Consumer(
             builder: (context, ref, child) {
+              final isLoggedIn = ref
+                  .read(userControllerProvider.notifier)
+                  .isLoggedIn();
               final state = ref.watch(userControllerProvider);
-              if (state.hasValue && state.value != null) {
-                final user = state.value!;
+              if (isLoggedIn && state.hasValue) {
+                final user = state.requireValue;
                 return UserAccountsDrawerHeader(
                   decoration: const BoxDecoration(
                     gradient: AppColors.primaryGradient,
@@ -85,8 +88,10 @@ class MainDrawer extends StatelessWidget {
 
           Consumer(
             builder: (context, ref, child) {
-              final state = ref.watch(userControllerProvider);
-              if (state.hasValue && state.value != null) {
+              final isLoggedIn = ref
+                  .read(userControllerProvider.notifier)
+                  .isLoggedIn();
+              if (isLoggedIn) {
                 return ListTile(
                   leading: const Icon(Icons.logout, color: AppColors.red),
                   title: Text(
@@ -96,10 +101,16 @@ class MainDrawer extends StatelessWidget {
                   onTap: () async {
                     Navigator.pop(context);
 
-                    await ref.read(userControllerProvider.notifier).logout();
+                    final logoutSuccess = await ref
+                        .read(userControllerProvider.notifier)
+                        .logout();
 
-                    if (!context.mounted) return;
-                    Navigator.pushReplacementNamed(context, AppRoutes.login);
+                    if (logoutSuccess && !context.mounted) return;
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      AppRoutes.login,
+                      (route) => false,
+                    );
                   },
                 );
               }
@@ -114,15 +125,9 @@ class MainDrawer extends StatelessWidget {
             child: Consumer(
               builder: (context, ref, child) {
                 final state = ref.watch(packageInfoProvider);
-                if (state.hasValue && state.value != null) {
-                  final packageInfo = state.value!;
-                  return Text(
-                    S.of(context).version(packageInfo.version),
-                    style: TextStyle(color: AppColors.grey),
-                  );
-                }
+                final version = state.value?.version ?? "1.0.0";
                 return Text(
-                  S.of(context).version("1.0.0"),
+                  S.of(context).version(version),
                   style: TextStyle(color: AppColors.grey),
                 );
               },
