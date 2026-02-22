@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appSubTitle": MessageLookupByLibrary.simpleMessage("عالم من الكتب"),
     "appTitle": MessageLookupByLibrary.simpleMessage("كتبي"),
+    "appearance": MessageLookupByLibrary.simpleMessage("المظهر"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "bookmarks_added": MessageLookupByLibrary.simpleMessage(
       "تم الإضافة الى المفضلة",
     ),
@@ -40,9 +42,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكيد كلمة المرور",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "dark": MessageLookupByLibrary.simpleMessage("داكن"),
     "description": MessageLookupByLibrary.simpleMessage("الوصف"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "error_email_already_used": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مسجل من قبل.",
     ),
@@ -92,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_wrong_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير صحيحة. حاول مرة أخرى.",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "light": MessageLookupByLibrary.simpleMessage("فاتح"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
     "myBookmarks": MessageLookupByLibrary.simpleMessage("مفضلاتي"),
@@ -113,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "success_register": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح.",
     ),
+    "systemDefault": MessageLookupByLibrary.simpleMessage("النظام الافتراضي"),
     "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };

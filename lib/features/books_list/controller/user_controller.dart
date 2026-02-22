@@ -18,15 +18,15 @@ class UserController extends AsyncNotifier<UserModel> {
     isLoggedInUseCase = ref.read(isLoggedInUseCaseProvider);
     logoutUseCase = ref.read(logoutUseCaseProvider);
 
-    final user = await getCurrentUserUseCase();
+    final user = getCurrentUserUseCase();
     if (user == null) {
       throw Exception('User not logged in');
     }
     return user;
   }
 
-  Future<bool> isLoggedIn() async {
-    return await isLoggedInUseCase();
+  bool isLoggedIn() {
+    return isLoggedInUseCase();
   }
 
   Future<void> logout() async {

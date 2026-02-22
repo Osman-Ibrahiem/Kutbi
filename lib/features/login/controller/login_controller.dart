@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/utils/app_exception.dart';
-import 'package:kutbi/domain/usecases/login/login_use_case.dart';
 
+import '../../../core/utils/api_exception.dart';
+import '../../../domain/usecases/login/login_use_case.dart';
 import '../state/login_state.dart';
 
 class LoginController extends Notifier<LoginState> {
@@ -19,7 +19,7 @@ class LoginController extends Notifier<LoginState> {
     try {
       final user = await _loginUseCase(email: email, password: password);
       state = Success(user);
-    } on AppException catch (e) {
+    } on ApiException catch (e) {
       state = Failure(e.toString());
     }
   }

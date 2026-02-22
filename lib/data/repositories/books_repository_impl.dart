@@ -1,8 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/errors/exceptions.dart';
+import '../../core/utils/api_exception.dart';
 import '../../domain/models/book.dart';
 import '../../domain/repositories/books_repository.dart';
 import '../datasources/books_remote_data_source.dart';
@@ -19,16 +17,12 @@ class BooksRepositoryImpl implements BooksRepository {
       final books = remoteBooks.map((e) => e.toBook()).toList();
       return books;
     } catch (e) {
-      if (e is SocketException) {
-        throw OfflineException("No Internet and no cached data.");
-      } else if (e is ServerException) {
-        rethrow;
-      } else if (e is OfflineException) {
+      if (e is ApiException) {
         rethrow;
       } else if (e is FormatException || e is DataParsingException) {
-        throw DataParsingException("Bad Data Format from Server");
+        throw DataParsingException(message: "Bad Data Format from Server");
       } else {
-        throw ServerException("Unexpected Error: $e");
+        throw ServerException(message: "Unexpected Error: $e");
       }
     }
   }
@@ -40,9 +34,8 @@ class BooksRepositoryImpl implements BooksRepository {
       final book = remoteBook.toBook();
       return book;
     } catch (e) {
-      if (e is OfflineException) rethrow;
-      if (e is ServerException) rethrow;
-      throw ServerException("Unexpected Error: $e");
+      if (e is ApiException) rethrow;
+      throw ServerException(message: "Unexpected Error: $e");
     }
   }
 }

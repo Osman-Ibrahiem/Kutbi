@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appSubTitle": MessageLookupByLibrary.simpleMessage("A world of books"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Kutbi"),
+    "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "bookmarks_added": MessageLookupByLibrary.simpleMessage(
       "Added to bookmarks",
     ),
@@ -38,11 +40,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "btnRegister": MessageLookupByLibrary.simpleMessage("Register"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
+    "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "description": MessageLookupByLibrary.simpleMessage("Description"),
     "donotHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "error_email_already_used": MessageLookupByLibrary.simpleMessage(
       "The email address is already in use.",
     ),
@@ -92,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_wrong_password": MessageLookupByLibrary.simpleMessage(
       "Incorrect password. Please try again.",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "light": MessageLookupByLibrary.simpleMessage("Light"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Login"),
     "myAccount": MessageLookupByLibrary.simpleMessage("Account"),
     "myBookmarks": MessageLookupByLibrary.simpleMessage("My Bookmarks"),
@@ -113,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "success_register": MessageLookupByLibrary.simpleMessage(
       "Registered successfully.",
     ),
+    "systemDefault": MessageLookupByLibrary.simpleMessage("System Default"),
     "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };

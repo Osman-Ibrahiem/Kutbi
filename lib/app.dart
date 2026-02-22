@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/generated/l10n.dart';
 import 'core/routing/app_routes.dart';
 import 'core/theme/app_theme.dart';
-import 'core/generated/l10n.dart';
+import 'features/settings/controller/locale_controller.dart';
+import 'features/settings/controller/theme_controller.dart';
 
-class App extends StatelessWidget {
+class App extends ConsumerWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeControllerProvider);
+    final locale = ref.watch(localeControllerProvider);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (context) => S.of(context).appTitle,
@@ -22,10 +28,10 @@ class App extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      locale: const Locale('ar'),
+      locale: locale.toLocale,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      themeMode: ThemeMode.system,
+      themeMode: themeMode.toThemeMode,
     );
   }
 }

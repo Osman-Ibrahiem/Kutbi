@@ -1,12 +1,13 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 
-import '../models/book_model.dart';
-import 'books_local_data_source.dart';
+import '../../../models/book_model.dart';
+import 'local_database.dart';
 
-class HiveBooksDataSource implements BooksLocalDataSource {
+class HiveService implements LocalDatabase {
   final Box<BookModel> box;
 
-  HiveBooksDataSource(this.box);
+  HiveService(this.box);
 
   @override
   bool contains(String id) {
@@ -44,3 +45,11 @@ class HiveBooksDataSource implements BooksLocalDataSource {
   @override
   Iterable<BookModel> get books => box.values;
 }
+
+final bookmarksBoxProvider = Provider<Box<BookModel>>((ref) {
+  throw UnimplementedError();
+});
+
+final localDatabaseProvider = Provider<LocalDatabase>((ref) {
+  return HiveService(ref.read(bookmarksBoxProvider));
+});

@@ -5,10 +5,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';
-import 'data/datasources/auth_local_data_source.dart';
-import 'data/datasources/books_local_data_source.dart';
 import 'data/models/book_hive_adapter.dart';
 import 'data/models/book_model.dart';
+import 'data/services/local/configuration/shared_prefs_service.dart';
+import 'data/services/local/database/hive_service.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {

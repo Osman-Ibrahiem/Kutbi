@@ -52,5 +52,12 @@
       "appVersion": {}
     }
   },
-  "noBookmarks": "لا يوجد عناصر في المفضلة."
+  "noBookmarks": "لا يوجد عناصر في المفضلة.",
+  "appearance": "المظهر",
+  "systemDefault": "النظام الافتراضي",
+  "light": "فاتح",
+  "dark": "داكن",
+  "language": "اللغة",
+  "english": "English",
+  "arabic": "العربية"
 }
