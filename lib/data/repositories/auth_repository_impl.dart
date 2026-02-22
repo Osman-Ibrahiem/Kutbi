@@ -44,13 +44,42 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  UserModel? getCurrentUser() {
-    return localDataSource.getUser();
+  UserModel getCurrentUser() {
+    final cachedUser = localDataSource.getUser();
+    if (cachedUser != null) return cachedUser;
+
+    final user = remoteDataSource.fetchProfile();
+    localDataSource.cacheUser(user);
+
+    return user;
+  }
+
+  @override
+  Future<UserModel> updateProfile({String? name, String? photoUrl}) async {
+    await remoteDataSource.updateProfile(name: name, photoUrl: photoUrl);
+
+    final currentUser = await localDataSource.getUser();
+    final updatedUser = UserModel(
+      id: currentUser!.id,
+      name: name ?? currentUser.name,
+      email: currentUser.email,
+      token: currentUser.token,
+      photoUrl: photoUrl ?? currentUser.photoUrl,
+    );
+
+    await localDataSource.cacheUser(updatedUser);
+    return updatedUser;
   }
 
   @override
   Future<void> logout() async {
     await authDataSource.logout();
+    await localDataSource.removeUser();
+  }
+
+  @override
+  Future<void> deleteAccount() async {
+    await remoteDataSource.deleteAccount();
     await localDataSource.removeUser();
   }
 }

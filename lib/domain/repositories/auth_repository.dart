@@ -13,5 +13,9 @@ abstract class AuthRepository {
 
   UserModel? getCurrentUser();
 
+  Future<UserModel> updateProfile({String? name, String? photoUrl});
+
   Future<void> logout();
+
+  Future<void> deleteAccount();
 }

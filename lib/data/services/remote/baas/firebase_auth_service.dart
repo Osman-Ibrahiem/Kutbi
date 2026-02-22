@@ -81,6 +81,36 @@ class FirebaseAuthService implements AuthService {
     });
   }
 
+  @override
+  Future<UserModel> fetchProfile() async {
+    final user = _auth.currentUser;
+    return UserModel(
+      id: user?.uid,
+      name: user?.displayName,
+      email: user?.email,
+      photoUrl: user?.photoURL,
+      token: await user?.getIdToken(),
+    );
+  }
+
+  @override
+  Future<void> updateProfile({String? name, String? photoUrl}) async {
+    final currentUser = _auth.currentUser;
+    if (currentUser == null) throw Exception("No user logged in");
+
+    if (name != null) await currentUser.updateDisplayName(name);
+    if (photoUrl != null) await currentUser.updatePhotoURL(photoUrl);
+    await currentUser.reload();
+  }
+
+  @override
+  Future<void> deleteAccount() async {
+    final currentUser = _auth.currentUser;
+    if (currentUser == null) throw Exception("No user logged in");
+
+    await currentUser.delete();
+  }
+
   String _mapFirebaseError(String code) {
     switch (code) {
       case 'user-not-found':

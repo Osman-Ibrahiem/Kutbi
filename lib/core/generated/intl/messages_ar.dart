@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accountDeletedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم حذف الحساب بنجاح",
+    ),
     "appSubTitle": MessageLookupByLibrary.simpleMessage("عالم من الكتب"),
     "appTitle": MessageLookupByLibrary.simpleMessage("كتبي"),
     "appearance": MessageLookupByLibrary.simpleMessage("المظهر"),
@@ -108,6 +111,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pages": MessageLookupByLibrary.simpleMessage("الصفحات"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تعديل الحساب بنجاح",
+    ),
     "publicationYear": MessageLookupByLibrary.simpleMessage("سنة النشر"),
     "registerTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),

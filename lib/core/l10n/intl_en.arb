@@ -59,5 +59,7 @@
   "dark": "Dark",
   "language": "Language",
   "english": "English",
-  "arabic": "العربية"
+  "arabic": "العربية",
+  "profileUpdatedSuccessfully": "Profile updated successfully",
+  "accountDeletedSuccessfully": "Account deleted successfully"
 }
