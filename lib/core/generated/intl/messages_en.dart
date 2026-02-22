@@ -38,10 +38,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Removed from bookmarks",
     ),
     "booksStore": MessageLookupByLibrary.simpleMessage("Books Store"),
+    "btnCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "btnDelete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "btnDeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
     "btnLogout": MessageLookupByLibrary.simpleMessage("Logout"),
     "btnRegister": MessageLookupByLibrary.simpleMessage("Register"),
+    "btnUpdate": MessageLookupByLibrary.simpleMessage("Update"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "content_dialog_delete_account": MessageLookupByLibrary.simpleMessage(
+      "This action cannot be undone. All your data will be lost permanently.",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "description": MessageLookupByLibrary.simpleMessage("Description"),
@@ -126,6 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Registered successfully.",
     ),
     "systemDefault": MessageLookupByLibrary.simpleMessage("System Default"),
+    "title_dialog_delete_account": MessageLookupByLibrary.simpleMessage(
+      "Delete Account?",
+    ),
     "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };

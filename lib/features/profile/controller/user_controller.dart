@@ -32,9 +32,7 @@ class UserController extends AsyncNotifier<UserModel> {
     logoutUseCase = ref.read(logoutUseCaseProvider);
     deleteAccountUseCase = ref.read(deleteAccountUseCaseProvider);
 
-    ref.onDispose(() {
-      _eventController.close();
-    });
+    ref.onDispose(() => _eventController.close());
 
     return await getCurrentUserUseCase();
   }
@@ -43,7 +41,7 @@ class UserController extends AsyncNotifier<UserModel> {
     return await isLoggedInUseCase();
   }
 
-  Future<void> updateUser(String newName, String photoUrl) async {
+  Future<void> updateUser({String? newName, String? photoUrl}) async {
     final currentUser = state.value;
 
     state = await AsyncValue.guard<UserModel>(() async {
@@ -61,7 +59,7 @@ class UserController extends AsyncNotifier<UserModel> {
           state = AsyncData(currentUser);
         }
 
-        _eventController.add(ShowSnackBar(e.toString()));
+        _eventController.add(ShowSnackBar(e.toString(), isError: true));
       },
       loading: () {},
     );
@@ -74,20 +72,17 @@ class UserController extends AsyncNotifier<UserModel> {
   Future<void> deleteAccount() async {
     final currentUser = state.value;
 
-    state = const AsyncLoading();
-
     try {
       await deleteAccountUseCase();
 
       _eventController.add(ShowSnackBar(S.current.accountDeletedSuccessfully));
-
       _eventController.add(NavigateToLogin());
     } catch (e, st) {
       if (currentUser != null) {
         state = AsyncData(currentUser);
       }
 
-      _eventController.add(ShowSnackBar(e.toString()));
+      _eventController.add(ShowSnackBar(e.toString(), isError: true));
     }
   }
 }

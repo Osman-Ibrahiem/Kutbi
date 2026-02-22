@@ -71,10 +71,17 @@ class InputField extends StatefulWidget {
     return InputField(
       key: key,
       controller: controller,
+      initialValue: initialValue,
+      enabled: enabled,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
+      onChanged: onChanged,
+      onFieldSubmitted: onFieldSubmitted,
       hintText: hintText ?? S.current.email,
       prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
+      obscureText: false,
+      enableObscureToggle: false,
       validator: validator ?? defaultValidator,
     );
   }
@@ -116,11 +123,17 @@ class InputField extends StatefulWidget {
     return InputField(
       key: key,
       controller: controller,
-      obscureText: true,
-      enableObscureToggle: true,
+      initialValue: initialValue,
+      enabled: enabled,
+      keyboardType: keyboardType,
+      textInputAction: textInputAction,
+      onChanged: onChanged,
+      onFieldSubmitted: onFieldSubmitted,
       hintText: hintText ?? S.current.password,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
+      obscureText: true,
+      enableObscureToggle: true,
       validator: validator ?? defaultValidator,
     );
   }
@@ -152,10 +165,17 @@ class InputField extends StatefulWidget {
     return InputField(
       key: key,
       controller: controller,
+      initialValue: initialValue,
+      enabled: enabled,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
+      onChanged: onChanged,
+      onFieldSubmitted: onFieldSubmitted,
       hintText: hintText ?? S.current.name,
       prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
+      obscureText: false,
+      enableObscureToggle: false,
       validator: validator ?? defaultValidator,
     );
   }

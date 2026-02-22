@@ -8,22 +8,35 @@ class PrimaryButton extends StatelessWidget {
   final bool enabled;
   final bool isLoading;
 
+  final Color? backgroundColor;
+  final Color? foregroundColor;
+
   final Widget child;
 
   const PrimaryButton({
     super.key,
     required this.child,
     this.onPressed,
-    this.padding ,
+    this.padding,
     this.borderRadius = 10,
     this.enabled = true,
     this.isLoading = false,
+    this.backgroundColor,
+    this.foregroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: (enabled && !isLoading) ? onPressed : null,
+      style: ElevatedButton.styleFrom(
+        padding: padding,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        backgroundColor: backgroundColor,
+        foregroundColor: foregroundColor,
+      ),
       child: isLoading
           ? const SizedBox(
               height: 20,
@@ -44,6 +57,8 @@ class PrimaryButton extends StatelessWidget {
     TextAlign? textAlign = TextAlign.center,
     bool enabled = true,
     bool isLoading = false,
+    Color? backgroundColor,
+    Color? foregroundColor,
   }) => PrimaryButton(
     key: key,
     onPressed: onPressed,
@@ -51,6 +66,8 @@ class PrimaryButton extends StatelessWidget {
     borderRadius: borderRadius,
     enabled: enabled,
     isLoading: isLoading,
+    backgroundColor: backgroundColor,
+    foregroundColor: foregroundColor,
     child: Text(text, style: textStyle, textAlign: textAlign),
   );
 }

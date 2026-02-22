@@ -61,5 +61,11 @@
   "english": "English",
   "arabic": "العربية",
   "profileUpdatedSuccessfully": "تم تعديل الحساب بنجاح",
-  "accountDeletedSuccessfully": "تم حذف الحساب بنجاح"
+  "accountDeletedSuccessfully": "تم حذف الحساب بنجاح",
+  "btnUpdate": "تحديث",
+  "btnDeleteAccount": "حذف الحساب",
+  "title_dialog_delete_account": "حذف الحساب؟",
+  "content_dialog_delete_account": "لا يمكن التراجع عن هذا الإجراء. ستفقد جميع بياناتك بشكل نهائي.",
+  "btnCancel": "الغاء",
+  "btnDelete": "حذف"
 }
