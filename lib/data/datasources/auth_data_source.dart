@@ -33,6 +33,16 @@ class AuthDataSource {
   Future<void> logout() async {
     await _service.signOut();
   }
+
+  UserModel? get currentUser => _service.currentUser;
+
+  Future<void> updateProfile({String? name, String? photoUrl}) async {
+    await _service.updateProfile(name: name, photoUrl: photoUrl);
+  }
+
+  Future<void> deleteAccount() async {
+    await _service.deleteAccount();
+  }
 }
 
 final authDataSourceProvider = Provider<AuthDataSource>(

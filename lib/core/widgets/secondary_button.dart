@@ -7,6 +7,7 @@ class SecondaryButton extends StatelessWidget {
   final double borderRadius;
   final bool enabled;
   final bool isLoading;
+  final Color? foregroundColor;
 
   final Widget child;
 
@@ -14,16 +15,24 @@ class SecondaryButton extends StatelessWidget {
     super.key,
     required this.child,
     this.onPressed,
-    this.padding ,
+    this.padding,
     this.borderRadius = 10,
     this.enabled = true,
     this.isLoading = false,
+    this.foregroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: (enabled && !isLoading) ? onPressed : null,
+      style: TextButton.styleFrom(
+        padding: padding,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        foregroundColor: foregroundColor,
+      ),
       child: isLoading
           ? const SizedBox(
               height: 20,
@@ -44,6 +53,7 @@ class SecondaryButton extends StatelessWidget {
     TextAlign? textAlign = TextAlign.center,
     bool enabled = true,
     bool isLoading = false,
+    Color? foregroundColor,
   }) => SecondaryButton(
     key: key,
     onPressed: onPressed,
@@ -51,6 +61,7 @@ class SecondaryButton extends StatelessWidget {
     borderRadius: borderRadius,
     enabled: enabled,
     isLoading: isLoading,
+    foregroundColor: foregroundColor,
     child: Text(text, style: textStyle, textAlign: textAlign),
   );
 }

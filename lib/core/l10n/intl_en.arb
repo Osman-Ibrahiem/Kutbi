@@ -59,5 +59,13 @@
   "dark": "Dark",
   "language": "Language",
   "english": "English",
-  "arabic": "العربية"
+  "arabic": "العربية",
+  "profileUpdatedSuccessfully": "Profile updated successfully",
+  "accountDeletedSuccessfully": "Account deleted successfully",
+  "btnUpdate": "Update",
+  "btnDeleteAccount": "Delete account",
+  "title_dialog_delete_account": "Delete Account?",
+  "content_dialog_delete_account": "This action cannot be undone. All your data will be lost permanently.",
+  "btnCancel": "Cancel",
+  "btnDelete": "Delete"
 }

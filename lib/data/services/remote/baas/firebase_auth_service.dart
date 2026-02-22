@@ -60,15 +60,6 @@ class FirebaseAuthService implements AuthService {
     }
   }
 
-  UserModel _mapFirebaseUserToUserModel(User user) {
-    return UserModel(
-      id: user.uid,
-      email: user.email,
-      name: user.displayName,
-      photoUrl: user.photoURL,
-    );
-  }
-
   @override
   Future<void> signOut() async {
     return await _auth.signOut();
@@ -79,6 +70,40 @@ class FirebaseAuthService implements AuthService {
     return _auth.authStateChanges().map((user) {
       return user != null ? _mapFirebaseUserToUserModel(user) : null;
     });
+  }
+
+  @override
+  UserModel? get currentUser {
+    final user = _auth.currentUser;
+    if (user == null) return null;
+    return _mapFirebaseUserToUserModel(user);
+  }
+
+  @override
+  Future<void> updateProfile({String? name, String? photoUrl}) async {
+    final currentUser = _auth.currentUser;
+    if (currentUser == null) throw Exception("No user logged in");
+
+    if (name != null) await currentUser.updateDisplayName(name);
+    if (photoUrl != null) await currentUser.updatePhotoURL(photoUrl);
+    await currentUser.reload();
+  }
+
+  @override
+  Future<void> deleteAccount() async {
+    final currentUser = _auth.currentUser;
+    if (currentUser == null) throw Exception("No user logged in");
+
+    await currentUser.delete();
+  }
+
+  UserModel _mapFirebaseUserToUserModel(User user) {
+    return UserModel(
+      id: user.uid,
+      email: user.email,
+      name: user.displayName,
+      photoUrl: user.photoURL,
+    );
   }
 
   String _mapFirebaseError(String code) {

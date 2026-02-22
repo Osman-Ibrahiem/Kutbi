@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accountDeletedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Account deleted successfully",
+    ),
     "appSubTitle": MessageLookupByLibrary.simpleMessage("A world of books"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Kutbi"),
     "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
@@ -35,10 +38,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Removed from bookmarks",
     ),
     "booksStore": MessageLookupByLibrary.simpleMessage("Books Store"),
+    "btnCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "btnDelete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "btnDeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("Login"),
     "btnLogout": MessageLookupByLibrary.simpleMessage("Logout"),
     "btnRegister": MessageLookupByLibrary.simpleMessage("Register"),
+    "btnUpdate": MessageLookupByLibrary.simpleMessage("Update"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "content_dialog_delete_account": MessageLookupByLibrary.simpleMessage(
+      "This action cannot be undone. All your data will be lost permanently.",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "description": MessageLookupByLibrary.simpleMessage("Description"),
@@ -106,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pages": MessageLookupByLibrary.simpleMessage("Pages"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Profile updated successfully",
+    ),
     "publicationYear": MessageLookupByLibrary.simpleMessage("Publication year"),
     "registerTitle": MessageLookupByLibrary.simpleMessage(
       "Register new account",
@@ -120,6 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Registered successfully.",
     ),
     "systemDefault": MessageLookupByLibrary.simpleMessage("System Default"),
+    "title_dialog_delete_account": MessageLookupByLibrary.simpleMessage(
+      "Delete Account?",
+    ),
     "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
   };

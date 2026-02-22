@@ -483,6 +483,71 @@ class S {
   String get arabic {
     return Intl.message('العربية', name: 'arabic', desc: '', args: []);
   }
+
+  /// `Profile updated successfully`
+  String get profileUpdatedSuccessfully {
+    return Intl.message(
+      'Profile updated successfully',
+      name: 'profileUpdatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account deleted successfully`
+  String get accountDeletedSuccessfully {
+    return Intl.message(
+      'Account deleted successfully',
+      name: 'accountDeletedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get btnUpdate {
+    return Intl.message('Update', name: 'btnUpdate', desc: '', args: []);
+  }
+
+  /// `Delete account`
+  String get btnDeleteAccount {
+    return Intl.message(
+      'Delete account',
+      name: 'btnDeleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Account?`
+  String get title_dialog_delete_account {
+    return Intl.message(
+      'Delete Account?',
+      name: 'title_dialog_delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This action cannot be undone. All your data will be lost permanently.`
+  String get content_dialog_delete_account {
+    return Intl.message(
+      'This action cannot be undone. All your data will be lost permanently.',
+      name: 'content_dialog_delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get btnCancel {
+    return Intl.message('Cancel', name: 'btnCancel', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get btnDelete {
+    return Intl.message('Delete', name: 'btnDelete', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

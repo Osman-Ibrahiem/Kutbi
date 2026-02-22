@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accountDeletedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم حذف الحساب بنجاح",
+    ),
     "appSubTitle": MessageLookupByLibrary.simpleMessage("عالم من الكتب"),
     "appTitle": MessageLookupByLibrary.simpleMessage("كتبي"),
     "appearance": MessageLookupByLibrary.simpleMessage("المظهر"),
@@ -35,11 +38,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم الحذف من المفضلة",
     ),
     "booksStore": MessageLookupByLibrary.simpleMessage("متجر الكتب"),
+    "btnCancel": MessageLookupByLibrary.simpleMessage("الغاء"),
+    "btnDelete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "btnDeleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
     "btnLogin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "btnLogout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
     "btnRegister": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "btnUpdate": MessageLookupByLibrary.simpleMessage("تحديث"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
+    ),
+    "content_dialog_delete_account": MessageLookupByLibrary.simpleMessage(
+      "لا يمكن التراجع عن هذا الإجراء. ستفقد جميع بياناتك بشكل نهائي.",
     ),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "dark": MessageLookupByLibrary.simpleMessage("داكن"),
@@ -108,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pages": MessageLookupByLibrary.simpleMessage("الصفحات"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "profileUpdatedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم تعديل الحساب بنجاح",
+    ),
     "publicationYear": MessageLookupByLibrary.simpleMessage("سنة النشر"),
     "registerTitle": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
@@ -120,6 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم إنشاء الحساب بنجاح.",
     ),
     "systemDefault": MessageLookupByLibrary.simpleMessage("النظام الافتراضي"),
+    "title_dialog_delete_account": MessageLookupByLibrary.simpleMessage(
+      "حذف الحساب؟",
+    ),
     "version": m0,
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
   };

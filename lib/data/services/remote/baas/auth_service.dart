@@ -12,4 +12,10 @@ abstract class AuthService {
   Future<void> signOut();
 
   Stream<UserModel?> authStateChanges();
+
+  UserModel? get currentUser;
+
+  Future<void> updateProfile({String? name, String? photoUrl});
+
+  Future<void> deleteAccount();
 }
