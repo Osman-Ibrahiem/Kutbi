@@ -11,9 +11,11 @@ import 'api_client.dart';
 class HttpClient implements ApiClient {
   final String baseUrl;
   final Duration timeout;
+  final http.Client client;
 
   const HttpClient({
     required this.baseUrl,
+    required this.client,
     this.timeout = const Duration(seconds: 30),
   });
 
@@ -29,7 +31,7 @@ class HttpClient implements ApiClient {
     logRequest('GET', uri, finalHeaders, null);
 
     return _safeRequest(() {
-      return http.get(uri, headers: finalHeaders);
+      return client.get(uri, headers: finalHeaders);
     });
   }
 
@@ -45,7 +47,7 @@ class HttpClient implements ApiClient {
     logRequest('POST', uri, finalHeaders, body);
 
     return _safeRequest(() {
-      return http.post(uri, headers: finalHeaders, body: jsonEncode(body));
+      return client.post(uri, headers: finalHeaders, body: jsonEncode(body));
     });
   }
 
@@ -61,7 +63,7 @@ class HttpClient implements ApiClient {
     logRequest('PUT', uri, finalHeaders, body);
 
     return _safeRequest(() {
-      return http.put(uri, headers: finalHeaders, body: jsonEncode(body));
+      return client.put(uri, headers: finalHeaders, body: jsonEncode(body));
     });
   }
 
@@ -76,7 +78,7 @@ class HttpClient implements ApiClient {
     logRequest('DELETE', uri, finalHeaders, null);
 
     return _safeRequest(() {
-      return http.delete(uri, headers: finalHeaders);
+      return client.delete(uri, headers: finalHeaders);
     });
   }
 
@@ -121,6 +123,11 @@ class HttpClient implements ApiClient {
   }
 }
 
+final httpClientProvider = Provider<http.Client>((ref) => http.Client());
+
 final apiClientProvider = Provider<ApiClient>((ref) {
-  return HttpClient(baseUrl: 'https://api.itbook.store/1.0/');
+  return HttpClient(
+    baseUrl: 'https://api.itbook.store/1.0/',
+    client: ref.read(httpClientProvider),
+  );
 });
