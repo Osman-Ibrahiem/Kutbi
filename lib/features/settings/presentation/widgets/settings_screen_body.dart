@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 
-import '../../../domain/models/app_locale.dart';
-import '../../../domain/models/app_theme_mode.dart';
+import '../../domain/models/app_locale.dart';
+import '../../domain/models/app_theme_mode.dart';
 import '../controller/locale_controller.dart';
 import '../controller/theme_controller.dart';
 

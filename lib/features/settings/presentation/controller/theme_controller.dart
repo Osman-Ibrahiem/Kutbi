@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../domain/models/app_theme_mode.dart';
-import '../../../domain/usecases/settings/get_current_theme_mode_use_case.dart';
-import '../../../domain/usecases/settings/set_current_theme_mode_use_case.dart';
+import '../../domain/models/app_theme_mode.dart';
+import '../../domain/usecases/settings/get_current_theme_mode_use_case.dart';
+import '../../domain/usecases/settings/set_current_theme_mode_use_case.dart';
 
 class ThemeController extends Notifier<AppThemeMode> {
   late final GetCurrentThemeModeUseCase _getCurrentThemeModeUseCase;

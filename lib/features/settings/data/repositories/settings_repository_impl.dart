@@ -1,12 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../datasource/settings_local_data_source.dart';
 import '../../domain/models/app_locale.dart';
 import '../../domain/models/app_theme_mode.dart';
 import '../../domain/repositories/settings_repository.dart';
-import '../datasources/local_data_source.dart';
 
 class SettingsRepositoryImpl implements SettingsRepository {
-  final LocalDataSource localDataSource;
+  final SettingsLocalDataSource localDataSource;
 
   const SettingsRepositoryImpl(this.localDataSource);
 
@@ -34,5 +34,5 @@ class SettingsRepositoryImpl implements SettingsRepository {
 }
 
 final settingsRepositoryProvider = Provider<SettingsRepository>(
-  (ref) => SettingsRepositoryImpl(ref.read(localDataSourceProvider)),
+  (ref) => SettingsRepositoryImpl(ref.read(settingsLocalDataSourceProvider)),
 );
