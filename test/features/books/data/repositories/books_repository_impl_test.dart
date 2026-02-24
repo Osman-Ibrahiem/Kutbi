@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kutbi/core/utils/api_exception.dart';
-import 'package:kutbi/data/datasources/books_remote_data_source.dart';
-import 'package:kutbi/data/models/book_model.dart';
-import 'package:kutbi/data/repositories/books_repository_impl.dart';
-import 'package:kutbi/domain/repositories/books_repository.dart';
+import 'package:kutbi/features/books/data/datasources/books_remote_data_source.dart';
+import 'package:kutbi/features/books/data/models/book_model.dart';
+import 'package:kutbi/features/books/data/repositories/books_repository_impl.dart';
+import 'package:kutbi/features/books/domain/repositories/books_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
 class BooksRemoteDataSourceMock extends Mock implements BooksRemoteDataSource {}

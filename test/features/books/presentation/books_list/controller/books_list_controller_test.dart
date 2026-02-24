@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kutbi/domain/models/book.dart';
-import 'package:kutbi/domain/usecases/books_list/get_new_books_usecase.dart';
-import 'package:kutbi/features/books_list/controller/books_list_controller.dart';
-import 'package:kutbi/features/books_list/state/books_list_state.dart';
+import 'package:kutbi/features/books/domain/models/book.dart';
+import 'package:kutbi/features/books/domain/usecases/books_list/get_new_books_usecase.dart';
+import 'package:kutbi/features/books/presentation/books_list/controller/books_list_controller.dart';
+import 'package:kutbi/features/books/presentation/books_list/state/books_list_state.dart';
 import 'package:mocktail/mocktail.dart';
 
 class GetNewBooksUseCaseMock extends Mock implements GetNewBooksUseCase {}

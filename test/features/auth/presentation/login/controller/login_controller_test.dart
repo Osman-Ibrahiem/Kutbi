@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kutbi/core/utils/api_exception.dart';
-import 'package:kutbi/domain/models/user_model.dart';
-import 'package:kutbi/domain/usecases/login/login_use_case.dart';
-import 'package:kutbi/features/login/controller/login_controller.dart';
-import 'package:kutbi/features/login/state/login_state.dart';
+import 'package:kutbi/features/auth/domain/models/user_model.dart';
+import 'package:kutbi/features/auth/domain/usecases/login/login_use_case.dart';
+import 'package:kutbi/features/auth/presentation/login/controller/login_controller.dart';
+import 'package:kutbi/features/auth/presentation/login/state/login_state.dart';
 import 'package:mocktail/mocktail.dart';
 
 class LoginUseCaseMock extends Mock implements LoginUseCase {}

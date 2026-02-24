@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kutbi/core/utils/api_exception.dart';
-import 'package:kutbi/data/datasources/books_remote_data_source.dart';
-import 'package:kutbi/data/services/remote/api/api_client.dart';
+import 'package:kutbi/features/books/data/datasources/books_remote_data_source.dart';
+import 'package:kutbi/core/services/remote/api/api_client.dart';
 import 'package:mocktail/mocktail.dart';
 
 class ApiClientMock extends Mock implements ApiClient {}

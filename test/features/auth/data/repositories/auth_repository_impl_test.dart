@@ -1,21 +1,21 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kutbi/data/datasources/auth_data_source.dart';
-import 'package:kutbi/data/datasources/local_data_source.dart';
-import 'package:kutbi/data/repositories/auth_repository_impl.dart';
-import 'package:kutbi/domain/models/user_model.dart';
-import 'package:kutbi/domain/repositories/auth_repository.dart';
+import 'package:kutbi/features/auth/data/datasources/auth_data_source.dart';
+import 'package:kutbi/features/auth/data/datasources/auth_local_data_source.dart';
+import 'package:kutbi/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:kutbi/features/auth/domain/models/user_model.dart';
+import 'package:kutbi/features/auth/domain/repositories/auth_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
 class AuthDataSourceMock extends Mock implements AuthDataSource {}
 
-class LocalDataSourceMock extends Mock implements LocalDataSource {}
+class AuthLocalDataSourceMock extends Mock implements AuthLocalDataSource {}
 
 class UserModelFake extends Fake implements UserModel {}
 
 void main() {
   late AuthRepository repository;
   late AuthDataSourceMock authDataSourceMock;
-  late LocalDataSourceMock localDataSourceMock;
+  late AuthLocalDataSourceMock localDataSourceMock;
 
   setUpAll(() {
     registerFallbackValue(UserModelFake());
@@ -23,7 +23,7 @@ void main() {
 
   setUp(() {
     authDataSourceMock = AuthDataSourceMock();
-    localDataSourceMock = LocalDataSourceMock();
+    localDataSourceMock = AuthLocalDataSourceMock();
     repository = AuthRepositoryImpl(
       authDataSource: authDataSourceMock,
       localDataSource: localDataSourceMock,

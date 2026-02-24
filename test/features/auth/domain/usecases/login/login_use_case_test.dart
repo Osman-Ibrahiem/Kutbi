@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kutbi/domain/models/user_model.dart';
-import 'package:kutbi/domain/repositories/auth_repository.dart';
-import 'package:kutbi/domain/usecases/login/login_use_case.dart';
+import 'package:kutbi/features/auth/domain/models/user_model.dart';
+import 'package:kutbi/features/auth/domain/repositories/auth_repository.dart';
+import 'package:kutbi/features/auth/domain/usecases/login/login_use_case.dart';
 import 'package:mocktail/mocktail.dart';
 
 class AuthRepositoryMock extends Mock implements AuthRepository {}

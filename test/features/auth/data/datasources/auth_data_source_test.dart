@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kutbi/data/datasources/auth_data_source.dart';
-import 'package:kutbi/data/services/remote/baas/auth_service.dart';
-import 'package:kutbi/domain/models/user_model.dart';
+import 'package:kutbi/features/auth/data/datasources/auth_data_source.dart';
+import 'package:kutbi/core/services/remote/baas/auth_service.dart';
+import 'package:kutbi/features/auth/domain/models/user_model.dart';
 import 'package:mocktail/mocktail.dart';
 
 class AuthServiceMock extends Mock implements AuthService {}

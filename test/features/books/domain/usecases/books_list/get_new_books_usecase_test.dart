@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kutbi/domain/models/book.dart';
-import 'package:kutbi/domain/repositories/books_repository.dart';
-import 'package:kutbi/domain/usecases/books_list/get_new_books_usecase.dart';
+import 'package:kutbi/features/books/domain/models/book.dart';
+import 'package:kutbi/features/books/domain/repositories/books_repository.dart';
+import 'package:kutbi/features/books/domain/usecases/books_list/get_new_books_usecase.dart';
 import 'package:mocktail/mocktail.dart';
 
 class BooksRepositoryMock extends Mock implements BooksRepository {}
