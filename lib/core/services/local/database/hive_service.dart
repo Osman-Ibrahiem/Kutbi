@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 
-import '../../../models/book_model.dart';
+import '../../../../features/books/data/models/book_model.dart';
 import 'local_database.dart';
 
 class HiveService implements LocalDatabase {

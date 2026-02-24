@@ -4,7 +4,7 @@ import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/utils/api_exception.dart';
 import 'package:kutbi/core/utils/logger.dart';
 
-import '../../../../domain/models/user_model.dart';
+import '../../../../features/auth/domain/models/user_model.dart';
 import 'auth_service.dart';
 
 class FirebaseAuthService implements AuthService {

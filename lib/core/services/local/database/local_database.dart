@@ -1,4 +1,4 @@
-import '../../../models/book_model.dart';
+import '../../../../features/books/data/models/book_model.dart';
 
 abstract class LocalDatabase {
   bool contains(String id);
