@@ -22,7 +22,7 @@ class BookDetailsController extends AsyncNotifier<Book> {
   }
 
   Future<void> _logOpenBookDetails(Book book) async {
-    _analytics.logEvent(
+    await _analytics.logEvent(
       'view_book_details',
       parameters: {
         'book_id': book.id,
