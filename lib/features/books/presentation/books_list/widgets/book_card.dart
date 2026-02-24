@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/core/widgets/image_network.dart';
 
+import '../../../../../core/widgets/image_network.dart';
 import '../../../../bookmarks/presentation/widgets/bookmark_button.dart';
 import '../../../domain/models/book.dart';
 

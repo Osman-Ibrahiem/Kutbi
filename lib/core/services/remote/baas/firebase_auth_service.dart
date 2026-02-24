@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/utils/api_exception.dart';
-import 'package:kutbi/core/utils/logger.dart';
 
 import '../../../../features/auth/domain/models/user_model.dart';
+import '../../../generated/l10n.dart';
+import '../../../utils/api_exception.dart';
+import '../../../utils/logger.dart';
 import 'auth_service.dart';
 
 class FirebaseAuthService implements AuthService {

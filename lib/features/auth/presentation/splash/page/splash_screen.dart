@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/routing/app_routes.dart';
 
+import '../../../../../core/routing/app_routes.dart';
 import '../controllers/splash_controller.dart';
 import '../state/splash_state.dart';
 import '../widgets/splash_screen_body.dart';

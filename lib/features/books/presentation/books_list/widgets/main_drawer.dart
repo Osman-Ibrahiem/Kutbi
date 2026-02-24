@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/routing/app_routes.dart';
-import 'package:kutbi/core/theme/app_colors.dart';
 
+import '../../../../../core/generated/l10n.dart';
+import '../../../../../core/routing/app_routes.dart';
+import '../../../../../core/theme/app_colors.dart';
 import '../../../../profile/presentation/controller/user_controller.dart';
 import '../controller/package_info_provider.dart';
 

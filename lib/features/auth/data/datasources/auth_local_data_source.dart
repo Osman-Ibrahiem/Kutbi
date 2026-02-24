@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/services/local/configuration/local_configuration.dart';
-import 'package:kutbi/core/services/local/configuration/shared_prefs_service.dart';
 
+import '../../../../core/services/local/configuration/local_configuration.dart';
+import '../../../../core/services/local/configuration/shared_prefs_service.dart';
 import '../../domain/models/user_model.dart';
 
 class AuthLocalDataSource {

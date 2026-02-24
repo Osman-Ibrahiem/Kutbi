@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/assets.gen.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/widgets/input_field.dart';
-import 'package:kutbi/core/widgets/primary_button.dart';
 
+import '../../../../../core/generated/assets.gen.dart';
+import '../../../../../core/generated/l10n.dart';
+import '../../../../../core/widgets/input_field.dart';
+import '../../../../../core/widgets/primary_button.dart';
 import '../controller/register_controller.dart';
 import '../state/register_state.dart';
 

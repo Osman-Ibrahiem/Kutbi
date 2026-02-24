@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/core/generated/l10n.dart';
+
+import '../../../../../core/generated/l10n.dart';
 
 class BookDescriptionSection extends StatefulWidget {
   final String description;

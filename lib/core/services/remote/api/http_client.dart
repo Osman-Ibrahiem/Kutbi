@@ -3,9 +3,9 @@ import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
-import 'package:kutbi/core/utils/api_exception.dart';
-import 'package:kutbi/core/utils/logger.dart';
 
+import '../../../utils/api_exception.dart';
+import '../../../utils/logger.dart';
 import 'api_client.dart';
 
 class HttpClient implements ApiClient {

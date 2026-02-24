@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/theme/app_colors.dart';
 
+import '../../../../core/generated/l10n.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../widgets/bookmarks_screen_body.dart';
 
 class BookmarksScreen extends StatelessWidget {

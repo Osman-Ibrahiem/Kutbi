@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/routing/app_routes.dart';
 
+import '../../../../core/generated/l10n.dart';
+import '../../../../core/routing/app_routes.dart';
 import '../../../books/domain/models/book.dart';
 import '../../../books/presentation/books_list/widgets/book_card.dart';
 import '../controller/bookmarks_controller.dart';

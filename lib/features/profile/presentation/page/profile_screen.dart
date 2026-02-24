@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/routing/app_routes.dart';
-import 'package:kutbi/core/theme/app_colors.dart';
-import 'package:kutbi/core/widgets/app_snackbar.dart';
 
+import '../../../../core/generated/l10n.dart';
+import '../../../../core/routing/app_routes.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/widgets/app_snackbar.dart';
 import '../controller/user_controller.dart';
 import '../state/profile_event.dart';
 import '../widgets/profile_screen_body.dart';

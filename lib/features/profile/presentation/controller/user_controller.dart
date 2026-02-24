@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/l10n.dart';
 
+import '../../../../core/generated/l10n.dart';
 import '../../../../core/services/remote/baas/analytics_service.dart';
 import '../../../../core/services/remote/baas/firebase_analytics_service.dart';
 import '../../../auth/domain/models/user_model.dart';

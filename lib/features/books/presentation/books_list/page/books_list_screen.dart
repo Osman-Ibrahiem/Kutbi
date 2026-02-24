@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/theme/app_colors.dart';
+import '../../../../../core/generated/l10n.dart';
+import '../../../../../core/theme/app_colors.dart';
 
 import '../widgets/books_list_screen_body.dart';
 import '../widgets/main_drawer.dart';

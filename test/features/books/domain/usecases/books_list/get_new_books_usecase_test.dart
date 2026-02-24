@@ -34,7 +34,9 @@ void main() {
     ];
 
     test('should get list of new books from the repository', () async {
-      when(() => repositoryMock.getNewBooks()).thenAnswer((_) async => testBooks);
+      when(
+        () => repositoryMock.getNewBooks(),
+      ).thenAnswer((_) async => testBooks);
 
       final result = await useCase();
 

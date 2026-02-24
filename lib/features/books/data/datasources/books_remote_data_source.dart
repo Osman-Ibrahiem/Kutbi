@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/utils/api_exception.dart';
 
 import '../../../../core/services/remote/api/api_client.dart';
 import '../../../../core/services/remote/api/http_client.dart';
+import '../../../../core/utils/api_exception.dart';
 import '../models/book_model.dart';
 import '../models/books_response.dart';
 

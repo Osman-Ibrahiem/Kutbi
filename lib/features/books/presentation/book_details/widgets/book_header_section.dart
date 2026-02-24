@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/core/theme/app_colors.dart';
-import 'package:kutbi/core/widgets/image_network.dart';
+
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/widgets/image_network.dart';
 
 class BookHeaderSection extends StatelessWidget {
   final String imageUrl;

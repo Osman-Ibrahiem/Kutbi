@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/assets.gen.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/routing/app_routes.dart';
-import 'package:kutbi/core/theme/app_colors.dart';
-import 'package:kutbi/core/widgets/input_field.dart';
-import 'package:kutbi/core/widgets/primary_button.dart';
-import 'package:kutbi/core/widgets/secondary_button.dart';
 
+import '../../../../../core/generated/assets.gen.dart';
+import '../../../../../core/generated/l10n.dart';
+import '../../../../../core/routing/app_routes.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/widgets/input_field.dart';
+import '../../../../../core/widgets/primary_button.dart';
+import '../../../../../core/widgets/secondary_button.dart';
 import '../controller/login_controller.dart';
 import '../state/login_state.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/generated/l10n.dart';
-import 'package:kutbi/core/widgets/app_snackbar.dart';
 
+import '../../../../../core/generated/l10n.dart';
+import '../../../../../core/widgets/app_snackbar.dart';
 import '../controller/register_controller.dart';
 import '../state/register_state.dart';
 import '../widgets/register_screen_body.dart';

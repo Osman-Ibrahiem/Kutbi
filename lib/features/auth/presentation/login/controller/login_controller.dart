@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kutbi/core/utils/api_exception.dart';
 
 import '../../../../../core/services/remote/baas/analytics_service.dart';
 import '../../../../../core/services/remote/baas/firebase_analytics_service.dart';
+import '../../../../../core/utils/api_exception.dart';
 import '../../../domain/usecases/login/login_use_case.dart';
 import '../state/login_state.dart';
 
