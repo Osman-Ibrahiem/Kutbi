@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../domain/models/book.dart';
+import '../../../../core/services/local/database/hive_service.dart';
+import '../../../../core/services/local/database/local_database.dart';
+import '../../../books/data/models/book_model.dart';
+import '../../../books/domain/models/book.dart';
 import '../../domain/repositories/bookmarks_repository.dart';
-import '../models/book_model.dart';
-import '../services/local/database/hive_service.dart';
-import '../services/local/database/local_database.dart';
 
 class BookmarksRepositoryImpl implements BookmarksRepository {
   final LocalDatabase _database;

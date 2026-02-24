@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/routing/app_routes.dart';
 
-import '../../../domain/models/book.dart';
-import '../../books_list/widgets/book_card.dart';
+import '../../../books/domain/models/book.dart';
+import '../../../books/presentation/books_list/widgets/book_card.dart';
 import '../controller/bookmarks_controller.dart';
 
 class BookmarksScreenBody extends ConsumerWidget {

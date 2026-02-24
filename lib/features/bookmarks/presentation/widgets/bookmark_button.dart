@@ -4,7 +4,7 @@ import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
 import 'package:kutbi/core/widgets/app_snackbar.dart';
 
-import '../../../domain/models/book.dart';
+import '../../../books/domain/models/book.dart';
 import '../controller/bookmarks_controller.dart';
 
 class BookmarkButton extends ConsumerWidget {

@@ -1,4 +1,4 @@
-import '../models/book.dart';
+import '../../../books/domain/models/book.dart';
 
 abstract class BookmarksRepository {
   List<Book> getBookmarks();

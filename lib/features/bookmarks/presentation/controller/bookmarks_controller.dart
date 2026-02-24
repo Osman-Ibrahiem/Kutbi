@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/services/remote/baas/analytics_service.dart';
-import '../../../data/services/remote/baas/firebase_analytics_service.dart';
-import '../../../domain/models/book.dart';
-import '../../../domain/usecases/bookmarks/get_bookmarks_use_case.dart';
-import '../../../domain/usecases/bookmarks/toggle_bookmark_use_case.dart';
+import '../../../../core/services/remote/baas/analytics_service.dart';
+import '../../../../core/services/remote/baas/firebase_analytics_service.dart';
+import '../../../books/domain/models/book.dart';
+import '../../domain/usecases/bookmarks/get_bookmarks_use_case.dart';
+import '../../domain/usecases/bookmarks/toggle_bookmark_use_case.dart';
 
 class BookmarksController extends Notifier<List<Book>> {
   late final GetBookmarksUseCase _getBookmarksUseCase;
