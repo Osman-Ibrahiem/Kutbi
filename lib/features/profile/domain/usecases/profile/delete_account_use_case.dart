@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/repositories/auth_repository_impl.dart';
-import '../../repositories/auth_repository.dart';
+import '../../../../auth/data/repositories/auth_repository_impl.dart';
+import '../../../../auth/domain/repositories/auth_repository.dart';
 
 class DeleteAccountUseCase {
   final AuthRepository repository;

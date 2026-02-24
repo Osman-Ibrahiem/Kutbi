@@ -3,10 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/assets.gen.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
+import 'package:kutbi/core/widgets/input_field.dart';
+import 'package:kutbi/core/widgets/primary_button.dart';
+import 'package:kutbi/core/widgets/secondary_button.dart';
 
-import '../../../core/widgets/input_field.dart';
-import '../../../core/widgets/primary_button.dart';
-import '../../../core/widgets/secondary_button.dart';
 import '../controller/user_controller.dart';
 
 class ProfileForm extends ConsumerStatefulWidget {

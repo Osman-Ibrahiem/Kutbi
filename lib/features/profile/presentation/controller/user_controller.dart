@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 
-import '../../../data/services/remote/baas/analytics_service.dart';
-import '../../../data/services/remote/baas/firebase_analytics_service.dart';
-import '../../../domain/models/user_model.dart';
-import '../../../domain/usecases/login/logout_use_case.dart';
-import '../../../domain/usecases/profile/delete_account_use_case.dart';
-import '../../../domain/usecases/profile/get_current_user_use_case.dart';
-import '../../../domain/usecases/profile/update_profile_use_case.dart';
-import '../../../domain/usecases/splash/is_logged_in_use_case.dart';
+import '../../../../core/services/remote/baas/analytics_service.dart';
+import '../../../../core/services/remote/baas/firebase_analytics_service.dart';
+import '../../../auth/domain/models/user_model.dart';
+import '../../../auth/domain/usecases/login/logout_use_case.dart';
+import '../../../auth/domain/usecases/splash/is_logged_in_use_case.dart';
+import '../../domain/usecases/profile/delete_account_use_case.dart';
+import '../../domain/usecases/profile/get_current_user_use_case.dart';
+import '../../domain/usecases/profile/update_profile_use_case.dart';
 import '../state/profile_event.dart';
 
 class UserController extends AsyncNotifier<UserModel> {
