@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/generated/l10n.dart';
 import 'core/routing/app_routes.dart';
 import 'core/theme/app_theme.dart';
+import 'data/services/remote/baas/firebase_analytics_service.dart';
 import 'features/settings/controller/locale_controller.dart';
 import 'features/settings/controller/theme_controller.dart';
 
@@ -15,6 +16,7 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeControllerProvider);
     final locale = ref.watch(localeControllerProvider);
+    final analyticsService = ref.read(analyticsServiceProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -32,6 +34,9 @@ class App extends ConsumerWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: themeMode.toThemeMode,
+      navigatorObservers: [
+        analyticsService.observer,
+      ],
     );
   }
 }
