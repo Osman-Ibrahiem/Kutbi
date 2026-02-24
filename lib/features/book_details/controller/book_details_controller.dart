@@ -1,18 +1,35 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/services/remote/baas/analytics_service.dart';
+import '../../../data/services/remote/baas/firebase_analytics_service.dart';
 import '../../../domain/models/book.dart';
 import '../../../domain/usecases/book_details/get_book_details_usecase.dart';
 
 class BookDetailsController extends AsyncNotifier<Book> {
   final String isbn;
   late final GetBookDetailsUseCase getBookDetailsUseCase;
+  late final AnalyticsService _analytics;
 
   BookDetailsController(this.isbn);
 
   @override
   Future<Book> build() async {
     getBookDetailsUseCase = ref.read(getBookDetailsUseCaseProvider);
-    return await getBookDetailsUseCase(isbn);
+    _analytics = ref.read(analyticsServiceProvider);
+    final book = await getBookDetailsUseCase(isbn);
+    await _logOpenBookDetails(book);
+    return book;
+  }
+
+  Future<void> _logOpenBookDetails(Book book) async {
+    _analytics.logEvent(
+      'view_book_details',
+      parameters: {
+        'book_id': book.id,
+        'book_title': book.title,
+        'price': book.price,
+      },
+    );
   }
 }
 
