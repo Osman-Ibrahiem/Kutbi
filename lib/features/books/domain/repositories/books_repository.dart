@@ -1,4 +1,4 @@
-import 'package:kutbi/domain/models/book.dart';
+import '../models/book.dart';
 
 abstract class BooksRepository {
   Future<List<Book>> getNewBooks();

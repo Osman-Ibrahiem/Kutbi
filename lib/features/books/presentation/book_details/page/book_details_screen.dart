@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../bookmarks/widgets/bookmark_button.dart';
+import '../../../../bookmarks/presentation/widgets/bookmark_button.dart';
 import '../controller/book_details_controller.dart';
 import '../widgets/book_details_screen_body.dart';
 

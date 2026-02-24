@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kutbi/domain/models/book.dart';
 
+import '../../../domain/models/book.dart';
 import 'book_description_section.dart';
 import 'book_header_section.dart';
 import 'book_info_section.dart';

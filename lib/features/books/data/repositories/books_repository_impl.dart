@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kutbi/core/utils/api_exception.dart';
 
-import '../../core/utils/api_exception.dart';
 import '../../domain/models/book.dart';
 import '../../domain/repositories/books_repository.dart';
 import '../datasources/books_remote_data_source.dart';

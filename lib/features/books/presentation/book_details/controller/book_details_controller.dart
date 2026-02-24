@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../data/services/remote/baas/analytics_service.dart';
-import '../../../data/services/remote/baas/firebase_analytics_service.dart';
+import '../../../../../core/services/remote/baas/analytics_service.dart';
+import '../../../../../core/services/remote/baas/firebase_analytics_service.dart';
 import '../../../domain/models/book.dart';
 import '../../../domain/usecases/book_details/get_book_details_usecase.dart';
 

@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 import 'package:kutbi/core/routing/app_routes.dart';
 import 'package:kutbi/core/theme/app_colors.dart';
-import 'package:kutbi/features/books_list/controller/package_info_provider.dart';
 
-import '../../profile/controller/user_controller.dart';
+import '../../../../profile/presentation/controller/user_controller.dart';
+import '../controller/package_info_provider.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
