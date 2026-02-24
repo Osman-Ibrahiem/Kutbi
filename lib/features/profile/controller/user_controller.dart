@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kutbi/core/generated/l10n.dart';
 
+import '../../../data/services/remote/baas/analytics_service.dart';
+import '../../../data/services/remote/baas/firebase_analytics_service.dart';
 import '../../../domain/models/user_model.dart';
 import '../../../domain/usecases/login/logout_use_case.dart';
 import '../../../domain/usecases/profile/delete_account_use_case.dart';
@@ -17,6 +19,7 @@ class UserController extends AsyncNotifier<UserModel> {
   late final IsLoggedInUseCase isLoggedInUseCase;
   late final LogoutUseCase logoutUseCase;
   late final DeleteAccountUseCase deleteAccountUseCase;
+  late final AnalyticsService _analytics;
 
   UserController();
 
@@ -31,6 +34,7 @@ class UserController extends AsyncNotifier<UserModel> {
     isLoggedInUseCase = ref.read(isLoggedInUseCaseProvider);
     logoutUseCase = ref.read(logoutUseCaseProvider);
     deleteAccountUseCase = ref.read(deleteAccountUseCaseProvider);
+    _analytics = ref.read(analyticsServiceProvider);
 
     ref.onDispose(() => _eventController.close());
 
@@ -65,6 +69,7 @@ class UserController extends AsyncNotifier<UserModel> {
 
   Future<bool> logout() async {
     try {
+      await _logLogout();
       await logoutUseCase();
       return true;
     } catch (e, st) {
@@ -76,6 +81,7 @@ class UserController extends AsyncNotifier<UserModel> {
     final currentUser = state.value;
 
     try {
+      await _logDeleteAccount();
       await deleteAccountUseCase();
 
       _eventController.add(ShowSnackBar(S.current.accountDeletedSuccessfully));
@@ -87,6 +93,16 @@ class UserController extends AsyncNotifier<UserModel> {
 
       _eventController.add(ShowSnackBar(e.toString(), isError: true));
     }
+  }
+
+  Future<void> _logLogout() async {
+    await _analytics.logEvent('logout');
+    await _analytics.removeUserId();
+  }
+
+  Future<void> _logDeleteAccount() async {
+    await _analytics.logEvent('delete_account');
+    await _analytics.removeUserId();
   }
 }
 

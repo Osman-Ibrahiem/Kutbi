@@ -19,6 +19,11 @@ class FirebaseAnalyticsService implements AnalyticsService {
   }
 
   @override
+  Future<void> removeUserId() async {
+    await _analytics.setUserId(id: null);
+  }
+
+  @override
   Future<void> logScreenView(String screenName) async {
     await _analytics.logScreenView(screenName: screenName);
   }

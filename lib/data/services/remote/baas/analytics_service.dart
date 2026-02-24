@@ -5,6 +5,8 @@ abstract class AnalyticsService {
 
   Future<void> setUserId(String id);
 
+  Future<void> removeUserId();
+
   Future<void> logScreenView(String screenName);
 
   NavigatorObserver get observer;
