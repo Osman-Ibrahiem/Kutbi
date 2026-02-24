@@ -1,4 +1,4 @@
-import 'package:kutbi/domain/models/user_model.dart';
+import 'package:kutbi/features/auth/domain/models/user_model.dart';
 
 sealed class LoginState {}
 

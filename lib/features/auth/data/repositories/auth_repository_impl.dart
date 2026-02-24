@@ -3,11 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/models/user_model.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../datasources/auth_data_source.dart';
-import '../datasources/local_data_source.dart';
+import '../datasources/auth_local_data_source.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthDataSource authDataSource;
-  final LocalDataSource localDataSource;
+  final AuthLocalDataSource localDataSource;
 
   AuthRepositoryImpl({
     required this.authDataSource,
@@ -88,6 +88,6 @@ class AuthRepositoryImpl implements AuthRepository {
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return AuthRepositoryImpl(
     authDataSource: ref.read(authDataSourceProvider),
-    localDataSource: ref.read(localDataSourceProvider),
+    localDataSource: ref.read(authLocalDataSourceProvider),
   );
 });

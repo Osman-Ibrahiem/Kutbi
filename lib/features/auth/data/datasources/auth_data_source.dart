@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/services/remote/baas/auth_service.dart';
+import '../../../../core/services/remote/baas/firebase_auth_service.dart';
 import '../../domain/models/user_model.dart';
-import '../services/remote/baas/auth_service.dart';
-import '../services/remote/baas/firebase_auth_service.dart';
 
 class AuthDataSource {
   final AuthService _service;

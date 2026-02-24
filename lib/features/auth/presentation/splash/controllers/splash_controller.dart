@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../domain/usecases/splash/is_logged_in_use_case.dart';
+import '../../../domain/usecases/splash/is_logged_in_use_case.dart';
 import '../state/splash_state.dart';
 
 class SplashController extends Notifier<SplashState> {

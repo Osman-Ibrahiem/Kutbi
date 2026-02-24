@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kutbi/core/utils/api_exception.dart';
 
-import '../../../core/utils/api_exception.dart';
 import '../../../domain/usecases/register/register_use_case.dart';
 import '../state/register_state.dart';
 
