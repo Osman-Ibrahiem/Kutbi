@@ -28,4 +28,19 @@ class Book {
     required this.url,
     this.pdf,
   });
+
+  static const dummy = Book(
+    id: '0000',
+    title: 'Loading Book Title Placeholder',
+    subTitle: 'Loading subTitle',
+    authors: 'Loading authors',
+    publisher: 'Loading publisher',
+    pages: '100',
+    year: '2026',
+    rating: '5',
+    desc: 'Loading desc',
+    price: '\$25',
+    imageUrl: '',
+    url: '',
+  );
 }

@@ -72,7 +72,7 @@ class UserController extends AsyncNotifier<UserModel> {
       await _logLogout();
       await logoutUseCase();
       return true;
-    } catch (e, st) {
+    } catch (e) {
       return false;
     }
   }
@@ -86,7 +86,7 @@ class UserController extends AsyncNotifier<UserModel> {
 
       _eventController.add(ShowSnackBar(S.current.accountDeletedSuccessfully));
       _eventController.add(NavigateToLogin());
-    } catch (e, st) {
+    } catch (e) {
       if (currentUser != null) {
         state = AsyncData(currentUser);
       }
