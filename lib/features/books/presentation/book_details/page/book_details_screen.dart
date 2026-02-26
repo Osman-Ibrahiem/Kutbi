@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../../../../core/widgets/error_layout.dart';
 import '../../../../bookmarks/presentation/widgets/bookmark_button.dart';
 import '../../../domain/models/book.dart';
 import '../controller/book_details_controller.dart';
@@ -38,7 +39,8 @@ class BookDetailsScreen extends ConsumerWidget {
           enabled: true,
           child: const BookDetailsScreenBody(book: Book.dummy),
         ),
-        error: (error, stackTrace) => Center(child: Text("Error: $error")),
+        error: (error, stackTrace) =>
+            ErrorLayout.unknownError(message: "Error: $error"),
         data: (book) => BookDetailsScreenBody(book: book),
       ),
     );
