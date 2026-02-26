@@ -4,10 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/generated/l10n.dart';
 import 'core/routing/app_routes.dart';
+import 'core/services/remote/baas/firebase_analytics_service.dart';
 import 'core/theme/app_theme.dart';
-import 'data/services/remote/baas/firebase_analytics_service.dart';
-import 'features/settings/controller/locale_controller.dart';
-import 'features/settings/controller/theme_controller.dart';
+import 'features/settings/presentation/controller/locale_controller.dart';
+import 'features/settings/presentation/controller/theme_controller.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -34,9 +34,7 @@ class App extends ConsumerWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: themeMode.toThemeMode,
-      navigatorObservers: [
-        analyticsService.observer,
-      ],
+      navigatorObservers: [analyticsService.observer],
     );
   }
 }

@@ -1,0 +1,50 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../core/services/remote/baas/auth_service.dart';
+import '../../../../core/services/remote/baas/firebase_auth_service.dart';
+import '../../domain/models/user_model.dart';
+
+class AuthDataSource {
+  final AuthService _service;
+
+  AuthDataSource(this._service);
+
+  Future<UserModel> login({
+    required String email,
+    required String password,
+  }) async {
+    await _service.signOut();
+    return await _service.signIn(email: email, password: password);
+  }
+
+  Future<UserModel> register({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    await _service.signOut();
+    return await _service.signUp(
+      displayName: name,
+      email: email,
+      password: password,
+    );
+  }
+
+  Future<void> logout() async {
+    await _service.signOut();
+  }
+
+  UserModel? get currentUser => _service.currentUser;
+
+  Future<void> updateProfile({String? name, String? photoUrl}) async {
+    await _service.updateProfile(name: name, photoUrl: photoUrl);
+  }
+
+  Future<void> deleteAccount() async {
+    await _service.deleteAccount();
+  }
+}
+
+final authDataSourceProvider = Provider<AuthDataSource>(
+  (ref) => AuthDataSource(ref.read(authServiceProvider)),
+);
