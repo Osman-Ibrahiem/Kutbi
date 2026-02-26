@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../../core/widgets/error_layout.dart';
 import '../../../../../core/widgets/secondary_button.dart';
 import '../../../domain/models/book.dart';
 import '../controller/books_list_controller.dart';
@@ -26,19 +27,11 @@ class BooksListScreenBody extends ConsumerWidget {
         },
         child: BooksListView(books: books),
       ),
-      Failure(message: final message) => Center(
-        child: Column(
-          children: [
-            Text(message, style: const TextStyle(color: Colors.red)),
-            const SizedBox(height: 20),
-            SecondaryButton.text(
-              onPressed: () {
-                ref.read(booksListControllerProvider.notifier).getNewBooks();
-              },
-              text: "Try Again",
-            ),
-          ],
-        ),
+      Failure(message: final message) => ErrorLayout.unknownError(
+        message: message,
+        onRetry: () {
+          ref.read(booksListControllerProvider.notifier).getNewBooks();
+        },
       ),
       _ => const SizedBox(),
     };

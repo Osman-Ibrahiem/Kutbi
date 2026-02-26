@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/generated/l10n.dart';
+import '../../../../core/widgets/error_layout.dart';
 import '../../../books/presentation/books_list/widgets/books_list_view.dart';
 import '../controller/bookmarks_controller.dart';
 
@@ -13,7 +14,10 @@ class BookmarksScreenBody extends ConsumerWidget {
     final bookmarks = ref.watch(bookmarksControllerProvider);
 
     return bookmarks.isEmpty
-        ? Center(child: Text(S.of(context).noBookmarks))
+        ? ErrorLayout.empty(
+            icon: Icons.bookmarks_outlined,
+            title: S.of(context).noBookmarks,
+          )
         : BooksListView(books: bookmarks);
   }
 }
