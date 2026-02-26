@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class ImageNetwork extends StatelessWidget {
   final String url;
@@ -22,12 +23,9 @@ class ImageNetwork extends StatelessWidget {
       width: width,
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
-        return const Center(
-          child: SizedBox(
-            width: 22,
-            height: 22,
-            child: CircularProgressIndicator(strokeWidth: 2),
-          ),
+        return Skeletonizer(
+          enabled: true,
+          child: SizedBox(height: height, width: width),
         );
       },
       errorBuilder: (context, error, stackTrace) {
