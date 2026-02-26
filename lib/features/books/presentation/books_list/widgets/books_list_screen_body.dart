@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/widgets/error_layout.dart';
-import '../../../../../core/widgets/secondary_button.dart';
 import '../../../domain/models/book.dart';
 import '../controller/books_list_controller.dart';
 import '../state/books_list_state.dart';

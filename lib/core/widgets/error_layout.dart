@@ -83,7 +83,7 @@ class ErrorLayout extends StatelessWidget {
   }) => ErrorLayout(
     key: key,
     icon: icon,
-    iconColor:iconColor,
+    iconColor: iconColor,
     title: title,
     message: message,
     onRetry: onRetry,
@@ -99,7 +99,7 @@ class ErrorLayout extends StatelessWidget {
   }) => ErrorLayout(
     key: key,
     icon: icon,
-    iconColor:iconColor,
+    iconColor: iconColor,
     title: title,
     message: message,
     onRetry: onRetry,
@@ -115,7 +115,7 @@ class ErrorLayout extends StatelessWidget {
   }) => ErrorLayout(
     key: key,
     icon: icon,
-    iconColor:iconColor,
+    iconColor: iconColor,
     title: title,
     message: message,
     onRetry: onRetry,
