@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../bookmarks/presentation/widgets/bookmark_button.dart';
+import '../../../domain/models/book.dart';
 import '../controller/book_details_controller.dart';
 import '../widgets/book_details_screen_body.dart';
 
@@ -32,7 +34,10 @@ class BookDetailsScreen extends ConsumerWidget {
         ],
       ),
       body: state.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
+        loading: () => Skeletonizer(
+          enabled: true,
+          child: const BookDetailsScreenBody(book: Book.dummy),
+        ),
         error: (error, stackTrace) => Center(child: Text("Error: $error")),
         data: (book) => BookDetailsScreenBody(book: book),
       ),
